@@ -1,0 +1,10 @@
+Package: placeholder
+Type: Website
+Title: bdverse: User Guide
+Version: 0.0.0.001
+Imports:
+  htmltools,
+  bookdown,
+Remotes: 
+  rstudio/htmltools,
+  rstudio/bookdown

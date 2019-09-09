@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 bdchecks | bdverse: Development Guide</title>
+  <meta name="description" content="… TBA" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 bdchecks | bdverse: Development Guide" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://bd-R.github.io/bdverse-dev-guide/" />
+  <meta property="og:image" content="https://bd-R.github.io/bdverse-dev-guide/images/under_construction.png" />
+  <meta property="og:description" content="… TBA" />
+  <meta name="github-repo" content="bd-R/bdverse-dev-guide" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 bdchecks | bdverse: Development Guide" />
+  
+  <meta name="twitter:description" content="… TBA" />
+  <meta name="twitter:image" content="https://bd-R.github.io/bdverse-dev-guide/images/under_construction.png" />
+
+<meta name="author" content="The bdverse team" />
+
+
+<meta name="date" content="2019-09-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/bd-R_icon.png" />
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="bddwc.html"/>
+<link rel="next" href="bdclean.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">bdverse: User Guide</a></li>
+
+<li class="divider"></li>
+<li><a href="index.html#section"></a></li>
+<li class="chapter" data-level="" data-path="about-this-development-guide.html"><a href="about-this-development-guide.html"><i class="fa fa-check"></i>About this Development Guide</a></li>
+<li class="chapter" data-level="1" data-path="start.html"><a href="start.html"><i class="fa fa-check"></i><b>1</b> Getting started</a><ul>
+<li class="chapter" data-level="1.1" data-path="start.html"><a href="start.html#installing-the-bdverse"><i class="fa fa-check"></i><b>1.1</b> Installing the bdverse</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="start.html"><a href="start.html#hopefully-soon-a-stable-version-from-cran"><i class="fa fa-check"></i><b>1.1.1</b> <span style="color:red"> Hopefully soon: a stable version from CRAN</span></a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="start.html"><a href="start.html#app-launcher"><i class="fa fa-check"></i><b>1.2</b> App launcher</a></li>
+<li class="chapter" data-level="1.3" data-path="start.html"><a href="start.html#binder"><i class="fa fa-check"></i><b>1.3</b> Binder</a></li>
+<li class="chapter" data-level="1.4" data-path="start.html"><a href="start.html#docker"><i class="fa fa-check"></i><b>1.4</b> Docker <img src="images/icons8-docker.svg" title="docker" width="22" /></a><ul>
+<li class="chapter" data-level="" data-path="start.html"><a href="start.html#what-is-docke"><i class="fa fa-check"></i>What is Docke?</a></li>
+<li class="chapter" data-level="1.4.1" data-path="start.html"><a href="start.html#docke-guide"><i class="fa fa-check"></i><b>1.4.1</b> Docke guide</a></li>
+<li class="chapter" data-level="" data-path="start.html"><a href="start.html#play-with-docker"><i class="fa fa-check"></i>Play with Docker</a></li>
+<li class="chapter" data-level="" data-path="start.html"><a href="start.html#bdverse-docker-images"><i class="fa fa-check"></i>bdverse Docker images</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="start.html"><a href="start.html#possible-installation-problems-solutions"><i class="fa fa-check"></i><b>1.5</b> Possible installation problems &amp; solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="bddwc.html"><a href="bddwc.html"><i class="fa fa-check"></i><b>2</b> bddwc</a><ul>
+<li class="chapter" data-level="2.1" data-path="bddwc.html"><a href="bddwc.html#bddwc-darwin-core"><i class="fa fa-check"></i><b>2.1</b> bddwc &amp; Darwin Core</a><ul>
+<li class="chapter" data-level="" data-path="bddwc.html"><a href="bddwc.html#what-is-the-darwin-core-standard"><i class="fa fa-check"></i>What is the Darwin Core standard?</a></li>
+<li class="chapter" data-level="" data-path="bddwc.html"><a href="bddwc.html#why-its-important-to-darwinize-a-dataset"><i class="fa fa-check"></i>Why it’s important to “Darwinize” a dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="bddwc.html"><a href="bddwc.html#shiny-app"><i class="fa fa-check"></i><b>2.2</b> Shiny app</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="bddwc.html"><a href="bddwc.html#launching-the-app"><i class="fa fa-check"></i><b>2.2.1</b> Launching the app</a></li>
+<li class="chapter" data-level="2.2.2" data-path="bddwc.html"><a href="bddwc.html#app-overview"><i class="fa fa-check"></i><b>2.2.2</b> App overview</a></li>
+<li class="chapter" data-level="2.2.3" data-path="bddwc.html"><a href="bddwc.html#dataupload"><i class="fa fa-check"></i><b>2.2.3</b> Data upload</a></li>
+<li class="chapter" data-level="2.2.4" data-path="bddwc.html"><a href="bddwc.html#datadownload"><i class="fa fa-check"></i><b>2.2.4</b> From an online database</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="bddwc.html"><a href="bddwc.html#dictionaries"><i class="fa fa-check"></i><b>2.3</b> Dictionaries</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="bddwc.html"><a href="bddwc.html#the-darwin-cloud-dictionary"><i class="fa fa-check"></i><b>2.3.1</b> The Darwin Cloud dictionary</a></li>
+<li class="chapter" data-level="2.3.2" data-path="bddwc.html"><a href="bddwc.html#custom-dictionary"><i class="fa fa-check"></i><b>2.3.2</b> Custom dictionary</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="bddwc.html"><a href="bddwc.html#darwinizing-your-dataset"><i class="fa fa-check"></i><b>2.4</b> Darwinizing your dataset</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="bddwc.html"><a href="bddwc.html#darwinizer-results"><i class="fa fa-check"></i><b>2.4.1</b> Darwinizer results</a></li>
+<li class="chapter" data-level="2.4.2" data-path="bddwc.html"><a href="bddwc.html#download-your-darwinized-data"><i class="fa fa-check"></i><b>2.4.2</b> Download your Darwinized data</a></li>
+<li class="chapter" data-level="2.4.3" data-path="bddwc.html"><a href="bddwc.html#closing-the-app"><i class="fa fa-check"></i><b>2.4.3</b> Closing the app</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="bddwc.html"><a href="bddwc.html#command-line-operations"><i class="fa fa-check"></i><b>2.5</b> Command line operations</a></li>
+<li class="chapter" data-level="2.6" data-path="bddwc.html"><a href="bddwc.html#load-package"><i class="fa fa-check"></i><b>2.6</b> Load package</a></li>
+<li class="chapter" data-level="2.7" data-path="bddwc.html"><a href="bddwc.html#darwinizing-a-dataset"><i class="fa fa-check"></i><b>2.7</b> Darwinizing a dataset</a></li>
+<li class="chapter" data-level="2.8" data-path="bddwc.html"><a href="bddwc.html#updating-the-darwin-cloud-dictionary-1"><i class="fa fa-check"></i><b>2.8</b> Updating <span>the Darwin Cloud dictionary</span></a></li>
+<li class="chapter" data-level="2.9" data-path="bddwc.html"><a href="bddwc.html#a-case-study"><i class="fa fa-check"></i><b>2.9</b> A case study</a><ul>
+<li class="chapter" data-level="" data-path="bddwc.html"><a href="bddwc.html#case-study-title"><i class="fa fa-check"></i>Case study title</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="bdchecks.html"><a href="bdchecks.html"><i class="fa fa-check"></i><b>3</b> bdchecks</a><ul>
+<li class="chapter" data-level="3.1" data-path="bdchecks.html"><a href="bdchecks.html#what-is-bdchecks"><i class="fa fa-check"></i><b>3.1</b> What is bdchecks</a></li>
+<li class="chapter" data-level="3.2" data-path="bdchecks.html"><a href="bdchecks.html#shiny-app-1"><i class="fa fa-check"></i><b>3.2</b> Shiny app</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="bdchecks.html"><a href="bdchecks.html#data-upload-and-download"><i class="fa fa-check"></i><b>3.2.1</b> Data upload and download</a></li>
+<li class="chapter" data-level="3.2.2" data-path="bdchecks.html"><a href="bdchecks.html#choose-data-checks"><i class="fa fa-check"></i><b>3.2.2</b> Choose data checks</a></li>
+<li class="chapter" data-level="3.2.3" data-path="bdchecks.html"><a href="bdchecks.html#checks-results-and-data-filtering"><i class="fa fa-check"></i><b>3.2.3</b> Checks results and data filtering</a></li>
+<li class="chapter" data-level="" data-path="bdchecks.html"><a href="bdchecks.html#overwiew"><i class="fa fa-check"></i>Overwiew</a></li>
+<li class="chapter" data-level="" data-path="bdchecks.html"><a href="bdchecks.html#filtering-the-data-based-on-the-results"><i class="fa fa-check"></i>Filtering the data based on the results</a></li>
+<li class="chapter" data-level="3.2.4" data-path="bdchecks.html"><a href="bdchecks.html#closing-the-app-1"><i class="fa fa-check"></i><b>3.2.4</b> Closing the app</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="bdchecks.html"><a href="bdchecks.html#command-line-operations-1"><i class="fa fa-check"></i><b>3.3</b> Command line operations</a></li>
+<li class="chapter" data-level="3.4" data-path="bdchecks.html"><a href="bdchecks.html#load-package-1"><i class="fa fa-check"></i><b>3.4</b> Load package</a></li>
+<li class="chapter" data-level="3.5" data-path="bdchecks.html"><a href="bdchecks.html#perform-data-checks"><i class="fa fa-check"></i><b>3.5</b> Perform data checks</a></li>
+<li class="chapter" data-level="3.6" data-path="bdchecks.html"><a href="bdchecks.html#review-performed-checks"><i class="fa fa-check"></i><b>3.6</b> Review performed checks</a><ul>
+<li class="chapter" data-level="3.6.1" data-path="bdchecks.html"><a href="bdchecks.html#filtering-your-data"><i class="fa fa-check"></i><b>3.6.1</b> Filtering your data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="bdchecks.html"><a href="bdchecks.html#data-checks-infrastructure"><i class="fa fa-check"></i><b>3.7</b> Data checks infrastructure</a><ul>
+<li class="chapter" data-level="3.7.1" data-path="bdchecks.html"><a href="bdchecks.html#data-checks-yaml-file"><i class="fa fa-check"></i><b>3.7.1</b> Data checks YAML file</a></li>
+<li class="chapter" data-level="3.7.2" data-path="bdchecks.html"><a href="bdchecks.html#data-check-example"><i class="fa fa-check"></i><b>3.7.2</b> Data check example</a></li>
+<li class="chapter" data-level="3.7.3" data-path="bdchecks.html"><a href="bdchecks.html#manage-your-own-data-checks"><i class="fa fa-check"></i><b>3.7.3</b> Manage your own data checks</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="bdclean.html"><a href="bdclean.html"><i class="fa fa-check"></i><b>4</b> bdclean</a><ul>
+<li class="chapter" data-level="4.1" data-path="bdclean.html"><a href="bdclean.html#what-is-bddwc"><i class="fa fa-check"></i><b>4.1</b> What is bddwc</a></li>
+<li class="chapter" data-level="4.2" data-path="bdclean.html"><a href="bdclean.html#app-overview-1"><i class="fa fa-check"></i><b>4.2</b> App overview</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="bdclean.html"><a href="bdclean.html#data-cleaning-configuration"><i class="fa fa-check"></i><b>4.2.1</b> Data cleaning configuration</a></li>
+<li class="chapter" data-level="4.2.2" data-path="bdclean.html"><a href="bdclean.html#flaging-and-cleaning"><i class="fa fa-check"></i><b>4.2.2</b> Flaging and cleaning</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="bdclean.html"><a href="bdclean.html#perform-cleaning"><i class="fa fa-check"></i><b>4.3</b> Perform cleaning</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="bdclean.html"><a href="bdclean.html#artifacts-and-reports"><i class="fa fa-check"></i><b>4.3.1</b> Artifacts and reports</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="learn.html"><a href="learn.html"><i class="fa fa-check"></i><b>5</b> Learn more</a><ul>
+<li class="chapter" data-level="5.1" data-path="learn.html"><a href="learn.html#biodiversity-data-cleaning"><i class="fa fa-check"></i><b>5.1</b> Biodiversity data cleaning</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="feedback.html"><a href="feedback.html"><i class="fa fa-check"></i><b>6</b> Getting your feedback</a><ul>
+<li class="chapter" data-level="6.1" data-path="feedback.html"><a href="feedback.html#report-a-bug-or-give-feedback-from-the-app"><i class="fa fa-check"></i><b>6.1</b> Report a bug or give feedback from the app</a></li>
+<li class="chapter" data-level="6.2" data-path="feedback.html"><a href="feedback.html#submit-a-github-issue"><i class="fa fa-check"></i><b>6.2</b> Submit a GitHub issue</a><ul>
+<li class="chapter" data-level="" data-path="feedback.html"><a href="feedback.html#bddwc-1"><i class="fa fa-check"></i>bddwc</a></li>
+<li class="chapter" data-level="" data-path="feedback.html"><a href="feedback.html#bdchecks-1"><i class="fa fa-check"></i>bdchecks</a></li>
+<li class="chapter" data-level="" data-path="feedback.html"><a href="feedback.html#bdclean-1"><i class="fa fa-check"></i>bdclean</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="feedback.html"><a href="feedback.html#contribute"><i class="fa fa-check"></i><b>6.3</b> Contribute</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="guidenews.html"><a href="guidenews.html"><i class="fa fa-check"></i><b>7</b> Guide release notes</a><ul>
+<li class="chapter" data-level="7.1" data-path="guidenews.html"><a href="guidenews.html#section-1"><i class="fa fa-check"></i><b>7.1</b> 0.0.1</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://bd-r.github.io/The-bdverse/the-bdverse-team.html" target="_blank"> (c) The bdverse team</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">bdverse: Development Guide</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="bdchecks" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> bdchecks</h1>
+<div id="what-is-bdchecks" class="section level2">
+<h2><span class="header-section-number">3.1</span> What is bdchecks</h2>
+<p><code>bdchecks</code> supplies a Shiny app and a set of functions to perform and manage various data checks for biodiversity data.</p>
+<p><img src="images/bdchecks_bdverse.png" title="bdchecks-bdverse" alt="bdchecks in the bdverse" />
+<strong><span style="color:red">–&gt; To replace with new bdchecks overview &lt;–</span></strong></p>
+<div id="what-are-biodiversity-data-checks" class="section level4 unnumbered">
+<h4>What are biodiversity data checks?</h4>
+<p>Data checks can include format checks, completeness checks, reasonableness checks, limit checks, etc. These processes usually result in flagging, documenting, and subsequent correcting or eliminating of suspect records. The checks must be specifically tailored around the structure of the data at hand, in our case, the Darwin Core standard. Ideally, a data check needs to hold its functionality and relevant metadata.</p>
+</div>
+<div id="what-bdchecks-can-do-for-you" class="section level4 unnumbered">
+<h4>What <code>bdchecks</code> can do for you?</h4>
+<p><code>bdchecks</code> offers various features for various R users:</p>
+<ul>
+<li>Using the Shiny app <strong>inexperienced R users</strong> can easily perform all data check and can easily filter the data accordingly. See [The shiny app] section.</li>
+<li><strong>Experienced R users</strong> can perform all data checks by utilizing few R functions form the command line or within an R script. See <a href="bdchecks.html#command-line-operations-1">Command line operations</a> section.</li>
+<li><strong>Advanced R users</strong> can even edit, add and manage their own collection of data checks, quite easily so. See <a href="#">Data checks infrastructure section</a>.</li>
+</ul>
+</div>
+</div>
+<div id="shiny-app-1" class="section level2">
+<h2><span class="header-section-number">3.2</span> Shiny app</h2>
+<div id="data-upload-and-download" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Data upload and download</h3>
+<p>As in<code>bddwc</code>: <a href="bddwc.html#dataupload">data upload</a>, <a href="bddwc.html#datadownload">data download</a>.</p>
+</div>
+<div id="choose-data-checks" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> Choose data checks</h3>
+<p><img src="images/bdchecks_choose_DC.png" title="bdchecks-app data-choose-DC" alt="Choose a data check by checking its box" />
+<strong><span style="color:red">–&gt; To replace with the new app &lt;–</span></strong></p>
+<p><img src="images/bdchecks_hover.png" title="bdchecks-app DC_hover" alt="Hovering over a data check name shows a short description" />
+<strong><span style="color:red">–&gt; To replace with the new app &lt;–</span></strong></p>
+</div>
+<div id="checks-results-and-data-filtering" class="section level3">
+<h3><span class="header-section-number">3.2.3</span> Checks results and data filtering</h3>
+</div>
+<div id="overwiew" class="section level3 unnumbered">
+<h3>Overwiew</h3>
+<div class="figure">
+<img src="images/bdchecks_DC_results_overview.png" title="bdchecks-app results_overview" alt="Results page overview" />
+<p class="caption">Results page overview</p>
+</div>
+<p><strong><span style="color:red">–&gt; To replace with the new app &lt;–</span></strong></p>
+</div>
+<div id="filtering-the-data-based-on-the-results" class="section level3 unnumbered">
+<h3>Filtering the data based on the results</h3>
+<div class="figure">
+<img src="images/bdchecks_filtering_table.png" title="bdchecks-app results_filter" alt="Choose specific results to filter out" />
+<p class="caption">Choose specific results to filter out</p>
+</div>
+<p><strong><span style="color:red">–&gt; To replace with the new app &lt;–</span></strong></p>
+<div class="figure">
+<img src="images/bdchecks_filtering_action.png" title="bdchecks-app filter-action" alt="Filter the data and download your filtered data" />
+<p class="caption">Filter the data and download your filtered data</p>
+</div>
+<p><strong><span style="color:red">–&gt; To replace with the new app &lt;–</span></strong></p>
+</div>
+<div id="closing-the-app-1" class="section level3">
+<h3><span class="header-section-number">3.2.4</span> Closing the app</h3>
+<p>Just close the app browser tab, and the R session will be terminated. To reopen it run in the R Console <code>runbdchecks()</code>.</p>
+</div>
+</div>
+<div id="command-line-operations-1" class="section level2">
+<h2><span class="header-section-number">3.3</span> Command line operations</h2>
+<p><strong><span style="color:red">–&gt; To synchronize functions with the new version!!!! &lt;–</span></strong></p>
+</div>
+<div id="load-package-1" class="section level2">
+<h2><span class="header-section-number">3.4</span> Load package</h2>
+<p>Load the <code>bdchecks</code> package</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1">    <span class="kw">library</span>(bdchecks)</a></code></pre></div>
+</div>
+<div id="perform-data-checks" class="section level2">
+<h2><span class="header-section-number">3.5</span> Perform data checks</h2>
+<p><code>bdchecks</code> contains a dataset on bats named <code>dataBats</code>.</p>
+<p>To perform all data checks use <code>performDataCheck</code>:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1">resultDC &lt;-<span class="st"> </span>bdchecks<span class="op">::</span><span class="kw">performDataCheck</span>(bdchecks<span class="op">::</span>dataBats)</a></code></pre></div>
+<p>replace <code>bdchecks::dataBats</code> with your own dataset name.</p>
+</div>
+<div id="review-performed-checks" class="section level2">
+<h2><span class="header-section-number">3.6</span> Review performed checks</h2>
+<p>See which data checks were performed:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1">resultDC</a></code></pre></div>
+<p>Review data checks result (% of records that passed, failed or have missing data)</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1"><span class="co"># Nice summary</span></a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="kw">summary_DC</span>(resultDC)</a></code></pre></div>
+<div id="filtering-your-data" class="section level3">
+<h3><span class="header-section-number">3.6.1</span> Filtering your data</h3>
+<p><strong><span style="color:red">[ TBA ]</span></strong></p>
+</div>
+</div>
+<div id="data-checks-infrastructure" class="section level2">
+<h2><span class="header-section-number">3.7</span> Data checks infrastructure</h2>
+<p><strong><span style="color:red">[Write short explanation + give a link to the relevant section in the developer-guide]</span></strong></p>
+<div id="data-checks-yaml-file" class="section level3">
+<h3><span class="header-section-number">3.7.1</span> Data checks YAML file</h3>
+<p><strong><span style="color:red">[Move section to dev-guide; add Shiny management app; explain unit testing framework + synchronization system]</span></strong></p>
+<p>The YMAL file holds the code and metadata of all data checks. The checks are derived from a core suite of tests and assertions being developed by <a href="https://www.tdwg.org/" target="_blank">TDWG</a>’s <a href="https://www.tdwg.org/community/bdq/" target="_blank">Biodiversity Data Quality</a> <strong><a href="https://www.tdwg.org/community/bdq/tg-2/" target="_blank">Task Group 2 ( Data Quality Tests and Assertions)</a></strong>. More information and links can be found in the <a href="learn.html#learn">Learn more</a> section.</p>
+</div>
+<div id="data-check-example" class="section level3">
+<h3><span class="header-section-number">3.7.2</span> Data check example</h3>
+<pre class="ymal"><code>DC_b23110e7-1be7-444a-a677-cdee0cf4330c:
+  name: countryMismatch
+  meta:
+    Description:
+      Main: Check if given country match given country code.
+      InputQuestion: Does country and country code match?
+      Example:
+        Fail: Country name (dwc:country) and ISO country code (dwc:countryCode) do
+          not match
+        Pass: Country name (dwc:country) and ISO country code (dwc:countryCode) match
+        InputFail: country=Australia, countryCode=4
+        InputPass: country=Australia, countryCode=AU
+        OutputFail: Failed
+        OutputPass: Passed
+      Resolution:
+        Record: SingleRecord
+        Term: MultiTerm
+      DarwinCoreClass: Location
+      Keywords: location,iso,country
+      guid: b23110e7-1be7-444a-a677-cdee0cf4330c
+    Flags:
+      Severity: Warning
+      Warning: Inconsistent
+      Output: Validation
+      Dimension: Consistency
+    Pseudocode: |
+      get.Country($countryCode) == $country
+    Source:
+      Reference:
+      CreatedBy: Povilas Gibas
+      MaintainedBy: Povilas Gibas
+      CreationDate: 2018-06-27
+      ModificationDate: 2018-06-27
+      ModificationHist:
+  Input:
+    Target: country,countryCode
+    Dependency:
+      DependencyType: Internal
+      DataChecks:
+      Rpackages: rgbif 
+      Data: isocodes$name,isocodes$code
+  Functionality: |
+      FUNC &lt;- function() {
+          result &lt;- sapply(seq_along(TARGET1), function(i) {
+              if (is.na(TARGET1[i]) | is.na(TARGET2[i])) {
+                  NA
+              } else {
+                  which(DEPEND1 == TARGET1[i]) == which(DEPEND2 == TARGET2[i])
+              }
+          })
+          result &lt;- unlist(result)
+          return(result)
+       }</code></pre>
+<p><strong><span style="color:red"> To replace with the new structure!!! </span></strong></p>
+</div>
+<div id="manage-your-own-data-checks" class="section level3">
+<h3><span class="header-section-number">3.7.3</span> Manage your own data checks</h3>
+<p><strong><span style="color:red"> To encourage or not to encourage mmm… </span></strong></p>
+<p>After adding/ removing/ editing the YAML file, you can load data checks into R using <code>getDC()</code> function.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1">DC &lt;-<span class="st"> </span><span class="kw">getDC</span>(<span class="st">&quot;path to your YAML file&quot;</span>)</a></code></pre></div>
+<p>You can also export data checks from your YAML file to .rda and roxygen2 comments.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">exportDC</span>(<span class="st">&quot;path to your YAML file&quot;</span>)</a></code></pre></div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="bddwc.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bdclean.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/bd-R/bdverse-developing-guide/edit/dev/bdchecks.Rmd",
+"text": "Edit this chapter"
+},
+"history": {
+"link": "https://github.com/bd-R/bdverse-developing-guide/commits/master/bdchecks.Rmd",
+"text": "Chapter edit history"
+},
+"download": ["bdverse-dev-guide.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

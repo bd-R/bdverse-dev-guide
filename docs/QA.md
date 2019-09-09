@@ -1,0 +1,9 @@
+# QA framework {#QA}
+
+## Unit testing
+
+## shinytest
+
+## Defensive programing
+
+## CI

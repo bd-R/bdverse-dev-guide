@@ -1,0 +1,14 @@
+[
+["index.html", "bdverse: Development Guide", " bdverse: Development Guide The bdverse team 2019-09-09 Under heavy construction, step by step… Figure 0.1: via GIPHY This book is a living document. You can view updates about this user guide in the release notes. This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 United States License. Published with bookdown "],
+["about-this-development-guide.html", "About this development guide", " About this development guide [TBA] Fundings [To add: Technion’s Blumenstein Fund] "],
+["users.html", "Chapter 1 bdverse users 1.1 ", " Chapter 1 bdverse users 1.1 "],
+["architecture.html", "Chapter 2 Architecture Overall bdversarchitecture Packages: Packages in the making", " Chapter 2 Architecture Overall bdversarchitecture Packages: 2.0.1 bddwc 2.0.2 bddwc.app 2.0.3 bdchecks 2.0.4 bdchecks.app 2.0.5 bdclean 2.0.6 bdutilities 2.0.7 bdutilities.app Packages in the making 2.0.8 bdvis 2.0.9 bdtools "],
+["weakness.html", "Chapter 3 Weaknesses 3.1 ", " Chapter 3 Weaknesses 3.1 "],
+["QA.html", "Chapter 4 QA framework 4.1 Unit testing 4.2 shinytest 4.3 Defensive programing 4.4 CI", " Chapter 4 QA framework 4.1 Unit testing 4.2 shinytest 4.3 Defensive programing 4.4 CI "],
+["dev-env.html", "Chapter 5 Development environment 5.1 ", " Chapter 5 Development environment 5.1 "],
+["maintenance.html", "Chapter 6 Maintenance best practicet 6.1 ", " Chapter 6 Maintenance best practicet 6.1 "],
+["planning.html", "Chapter 7 Project planning and idea farming 7.1 ", " Chapter 7 Project planning and idea farming 7.1 "],
+["help.html", "Chapter 8 Asking for help 8.1 describing concrete problems", " Chapter 8 Asking for help 8.1 describing concrete problems "],
+["guidenews.html", "Chapter 9 Guide release notes 9.1 0.0.1", " Chapter 9 Guide release notes 9.1 0.0.1 YYYY-MM-DD, add details… YYYY-MM-DD, add details… "],
+["references.html", "Chapter 10 References", " Chapter 10 References "]
+]

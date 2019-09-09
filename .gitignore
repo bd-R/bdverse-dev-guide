@@ -1,0 +1,14 @@
+.Rproj.user
+.Rhistory
+.RData
+_publish.R
+_bookdown_files
+rsconnect
+/.Rbuildignore
+/packages.bib
+.Rproj.user
+_book
+_rOpenSci_content
+_removed
+pdfbook
+bdverse-user-guide.log

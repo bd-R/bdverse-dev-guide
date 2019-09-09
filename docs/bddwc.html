@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 bddwc | bdverse: Development Guide</title>
+  <meta name="description" content="… TBA" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 bddwc | bdverse: Development Guide" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://bd-R.github.io/bdverse-dev-guide/" />
+  <meta property="og:image" content="https://bd-R.github.io/bdverse-dev-guide/images/under_construction.png" />
+  <meta property="og:description" content="… TBA" />
+  <meta name="github-repo" content="bd-R/bdverse-dev-guide" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 bddwc | bdverse: Development Guide" />
+  
+  <meta name="twitter:description" content="… TBA" />
+  <meta name="twitter:image" content="https://bd-R.github.io/bdverse-dev-guide/images/under_construction.png" />
+
+<meta name="author" content="The bdverse team" />
+
+
+<meta name="date" content="2019-09-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/bd-R_icon.png" />
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="start.html"/>
+<link rel="next" href="bdchecks.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">bdverse: User Guide</a></li>
+
+<li class="divider"></li>
+<li><a href="index.html#section"></a></li>
+<li class="chapter" data-level="" data-path="about-this-development-guide.html"><a href="about-this-development-guide.html"><i class="fa fa-check"></i>About this Development Guide</a></li>
+<li class="chapter" data-level="1" data-path="start.html"><a href="start.html"><i class="fa fa-check"></i><b>1</b> Getting started</a><ul>
+<li class="chapter" data-level="1.1" data-path="start.html"><a href="start.html#installing-the-bdverse"><i class="fa fa-check"></i><b>1.1</b> Installing the bdverse</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="start.html"><a href="start.html#hopefully-soon-a-stable-version-from-cran"><i class="fa fa-check"></i><b>1.1.1</b> <span style="color:red"> Hopefully soon: a stable version from CRAN</span></a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="start.html"><a href="start.html#app-launcher"><i class="fa fa-check"></i><b>1.2</b> App launcher</a></li>
+<li class="chapter" data-level="1.3" data-path="start.html"><a href="start.html#binder"><i class="fa fa-check"></i><b>1.3</b> Binder</a></li>
+<li class="chapter" data-level="1.4" data-path="start.html"><a href="start.html#docker"><i class="fa fa-check"></i><b>1.4</b> Docker <img src="images/icons8-docker.svg" title="docker" width="22" /></a><ul>
+<li class="chapter" data-level="" data-path="start.html"><a href="start.html#what-is-docke"><i class="fa fa-check"></i>What is Docke?</a></li>
+<li class="chapter" data-level="1.4.1" data-path="start.html"><a href="start.html#docke-guide"><i class="fa fa-check"></i><b>1.4.1</b> Docke guide</a></li>
+<li class="chapter" data-level="" data-path="start.html"><a href="start.html#play-with-docker"><i class="fa fa-check"></i>Play with Docker</a></li>
+<li class="chapter" data-level="" data-path="start.html"><a href="start.html#bdverse-docker-images"><i class="fa fa-check"></i>bdverse Docker images</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="start.html"><a href="start.html#possible-installation-problems-solutions"><i class="fa fa-check"></i><b>1.5</b> Possible installation problems &amp; solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="bddwc.html"><a href="bddwc.html"><i class="fa fa-check"></i><b>2</b> bddwc</a><ul>
+<li class="chapter" data-level="2.1" data-path="bddwc.html"><a href="bddwc.html#bddwc-darwin-core"><i class="fa fa-check"></i><b>2.1</b> bddwc &amp; Darwin Core</a><ul>
+<li class="chapter" data-level="" data-path="bddwc.html"><a href="bddwc.html#what-is-the-darwin-core-standard"><i class="fa fa-check"></i>What is the Darwin Core standard?</a></li>
+<li class="chapter" data-level="" data-path="bddwc.html"><a href="bddwc.html#why-its-important-to-darwinize-a-dataset"><i class="fa fa-check"></i>Why it’s important to “Darwinize” a dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="bddwc.html"><a href="bddwc.html#shiny-app"><i class="fa fa-check"></i><b>2.2</b> Shiny app</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="bddwc.html"><a href="bddwc.html#launching-the-app"><i class="fa fa-check"></i><b>2.2.1</b> Launching the app</a></li>
+<li class="chapter" data-level="2.2.2" data-path="bddwc.html"><a href="bddwc.html#app-overview"><i class="fa fa-check"></i><b>2.2.2</b> App overview</a></li>
+<li class="chapter" data-level="2.2.3" data-path="bddwc.html"><a href="bddwc.html#dataupload"><i class="fa fa-check"></i><b>2.2.3</b> Data upload</a></li>
+<li class="chapter" data-level="2.2.4" data-path="bddwc.html"><a href="bddwc.html#datadownload"><i class="fa fa-check"></i><b>2.2.4</b> From an online database</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="bddwc.html"><a href="bddwc.html#dictionaries"><i class="fa fa-check"></i><b>2.3</b> Dictionaries</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="bddwc.html"><a href="bddwc.html#the-darwin-cloud-dictionary"><i class="fa fa-check"></i><b>2.3.1</b> The Darwin Cloud dictionary</a></li>
+<li class="chapter" data-level="2.3.2" data-path="bddwc.html"><a href="bddwc.html#custom-dictionary"><i class="fa fa-check"></i><b>2.3.2</b> Custom dictionary</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="bddwc.html"><a href="bddwc.html#darwinizing-your-dataset"><i class="fa fa-check"></i><b>2.4</b> Darwinizing your dataset</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="bddwc.html"><a href="bddwc.html#darwinizer-results"><i class="fa fa-check"></i><b>2.4.1</b> Darwinizer results</a></li>
+<li class="chapter" data-level="2.4.2" data-path="bddwc.html"><a href="bddwc.html#download-your-darwinized-data"><i class="fa fa-check"></i><b>2.4.2</b> Download your Darwinized data</a></li>
+<li class="chapter" data-level="2.4.3" data-path="bddwc.html"><a href="bddwc.html#closing-the-app"><i class="fa fa-check"></i><b>2.4.3</b> Closing the app</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="bddwc.html"><a href="bddwc.html#command-line-operations"><i class="fa fa-check"></i><b>2.5</b> Command line operations</a></li>
+<li class="chapter" data-level="2.6" data-path="bddwc.html"><a href="bddwc.html#load-package"><i class="fa fa-check"></i><b>2.6</b> Load package</a></li>
+<li class="chapter" data-level="2.7" data-path="bddwc.html"><a href="bddwc.html#darwinizing-a-dataset"><i class="fa fa-check"></i><b>2.7</b> Darwinizing a dataset</a></li>
+<li class="chapter" data-level="2.8" data-path="bddwc.html"><a href="bddwc.html#updating-the-darwin-cloud-dictionary-1"><i class="fa fa-check"></i><b>2.8</b> Updating <span>the Darwin Cloud dictionary</span></a></li>
+<li class="chapter" data-level="2.9" data-path="bddwc.html"><a href="bddwc.html#a-case-study"><i class="fa fa-check"></i><b>2.9</b> A case study</a><ul>
+<li class="chapter" data-level="" data-path="bddwc.html"><a href="bddwc.html#case-study-title"><i class="fa fa-check"></i>Case study title</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="bdchecks.html"><a href="bdchecks.html"><i class="fa fa-check"></i><b>3</b> bdchecks</a><ul>
+<li class="chapter" data-level="3.1" data-path="bdchecks.html"><a href="bdchecks.html#what-is-bdchecks"><i class="fa fa-check"></i><b>3.1</b> What is bdchecks</a></li>
+<li class="chapter" data-level="3.2" data-path="bdchecks.html"><a href="bdchecks.html#shiny-app-1"><i class="fa fa-check"></i><b>3.2</b> Shiny app</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="bdchecks.html"><a href="bdchecks.html#data-upload-and-download"><i class="fa fa-check"></i><b>3.2.1</b> Data upload and download</a></li>
+<li class="chapter" data-level="3.2.2" data-path="bdchecks.html"><a href="bdchecks.html#choose-data-checks"><i class="fa fa-check"></i><b>3.2.2</b> Choose data checks</a></li>
+<li class="chapter" data-level="3.2.3" data-path="bdchecks.html"><a href="bdchecks.html#checks-results-and-data-filtering"><i class="fa fa-check"></i><b>3.2.3</b> Checks results and data filtering</a></li>
+<li class="chapter" data-level="" data-path="bdchecks.html"><a href="bdchecks.html#overwiew"><i class="fa fa-check"></i>Overwiew</a></li>
+<li class="chapter" data-level="" data-path="bdchecks.html"><a href="bdchecks.html#filtering-the-data-based-on-the-results"><i class="fa fa-check"></i>Filtering the data based on the results</a></li>
+<li class="chapter" data-level="3.2.4" data-path="bdchecks.html"><a href="bdchecks.html#closing-the-app-1"><i class="fa fa-check"></i><b>3.2.4</b> Closing the app</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="bdchecks.html"><a href="bdchecks.html#command-line-operations-1"><i class="fa fa-check"></i><b>3.3</b> Command line operations</a></li>
+<li class="chapter" data-level="3.4" data-path="bdchecks.html"><a href="bdchecks.html#load-package-1"><i class="fa fa-check"></i><b>3.4</b> Load package</a></li>
+<li class="chapter" data-level="3.5" data-path="bdchecks.html"><a href="bdchecks.html#perform-data-checks"><i class="fa fa-check"></i><b>3.5</b> Perform data checks</a></li>
+<li class="chapter" data-level="3.6" data-path="bdchecks.html"><a href="bdchecks.html#review-performed-checks"><i class="fa fa-check"></i><b>3.6</b> Review performed checks</a><ul>
+<li class="chapter" data-level="3.6.1" data-path="bdchecks.html"><a href="bdchecks.html#filtering-your-data"><i class="fa fa-check"></i><b>3.6.1</b> Filtering your data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="bdchecks.html"><a href="bdchecks.html#data-checks-infrastructure"><i class="fa fa-check"></i><b>3.7</b> Data checks infrastructure</a><ul>
+<li class="chapter" data-level="3.7.1" data-path="bdchecks.html"><a href="bdchecks.html#data-checks-yaml-file"><i class="fa fa-check"></i><b>3.7.1</b> Data checks YAML file</a></li>
+<li class="chapter" data-level="3.7.2" data-path="bdchecks.html"><a href="bdchecks.html#data-check-example"><i class="fa fa-check"></i><b>3.7.2</b> Data check example</a></li>
+<li class="chapter" data-level="3.7.3" data-path="bdchecks.html"><a href="bdchecks.html#manage-your-own-data-checks"><i class="fa fa-check"></i><b>3.7.3</b> Manage your own data checks</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="bdclean.html"><a href="bdclean.html"><i class="fa fa-check"></i><b>4</b> bdclean</a><ul>
+<li class="chapter" data-level="4.1" data-path="bdclean.html"><a href="bdclean.html#what-is-bddwc"><i class="fa fa-check"></i><b>4.1</b> What is bddwc</a></li>
+<li class="chapter" data-level="4.2" data-path="bdclean.html"><a href="bdclean.html#app-overview-1"><i class="fa fa-check"></i><b>4.2</b> App overview</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="bdclean.html"><a href="bdclean.html#data-cleaning-configuration"><i class="fa fa-check"></i><b>4.2.1</b> Data cleaning configuration</a></li>
+<li class="chapter" data-level="4.2.2" data-path="bdclean.html"><a href="bdclean.html#flaging-and-cleaning"><i class="fa fa-check"></i><b>4.2.2</b> Flaging and cleaning</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="bdclean.html"><a href="bdclean.html#perform-cleaning"><i class="fa fa-check"></i><b>4.3</b> Perform cleaning</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="bdclean.html"><a href="bdclean.html#artifacts-and-reports"><i class="fa fa-check"></i><b>4.3.1</b> Artifacts and reports</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="learn.html"><a href="learn.html"><i class="fa fa-check"></i><b>5</b> Learn more</a><ul>
+<li class="chapter" data-level="5.1" data-path="learn.html"><a href="learn.html#biodiversity-data-cleaning"><i class="fa fa-check"></i><b>5.1</b> Biodiversity data cleaning</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="feedback.html"><a href="feedback.html"><i class="fa fa-check"></i><b>6</b> Getting your feedback</a><ul>
+<li class="chapter" data-level="6.1" data-path="feedback.html"><a href="feedback.html#report-a-bug-or-give-feedback-from-the-app"><i class="fa fa-check"></i><b>6.1</b> Report a bug or give feedback from the app</a></li>
+<li class="chapter" data-level="6.2" data-path="feedback.html"><a href="feedback.html#submit-a-github-issue"><i class="fa fa-check"></i><b>6.2</b> Submit a GitHub issue</a><ul>
+<li class="chapter" data-level="" data-path="feedback.html"><a href="feedback.html#bddwc-1"><i class="fa fa-check"></i>bddwc</a></li>
+<li class="chapter" data-level="" data-path="feedback.html"><a href="feedback.html#bdchecks-1"><i class="fa fa-check"></i>bdchecks</a></li>
+<li class="chapter" data-level="" data-path="feedback.html"><a href="feedback.html#bdclean-1"><i class="fa fa-check"></i>bdclean</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="feedback.html"><a href="feedback.html#contribute"><i class="fa fa-check"></i><b>6.3</b> Contribute</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="guidenews.html"><a href="guidenews.html"><i class="fa fa-check"></i><b>7</b> Guide release notes</a><ul>
+<li class="chapter" data-level="7.1" data-path="guidenews.html"><a href="guidenews.html#section-1"><i class="fa fa-check"></i><b>7.1</b> 0.0.1</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://bd-r.github.io/The-bdverse/the-bdverse-team.html" target="_blank"> (c) The bdverse team</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">bdverse: Development Guide</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="bddwc" class="section level1 bddwc">
+<h1><span class="header-section-number">Chapter 2</span> bddwc</h1>
+<div id="bddwc-darwin-core" class="section level2">
+<h2><span class="header-section-number">2.1</span> bddwc &amp; Darwin Core</h2>
+<p><code>bdDwC</code> is a R package that supplies an interactive Shiny app and a set of functions for standardizing field names in compliance to the Darwin Core (DwC) format. <code>bdDwC</code> is a key element in the <code>bdverse</code>– a collection of tools, that form a general framework for facilitating biodiversity science in R.</p>
+<p><img src="images/bdDwC_bdverse.png" title="bdDwC-bdverse" alt="bdDwC in the bdverse" />
+<strong><span style="color:red">–&gt; To replace with new bddwc overview &lt;–</span></strong></p>
+<div id="what-is-the-darwin-core-standard" class="section level3 unnumbered">
+<h3>What is the Darwin Core standard?</h3>
+<p>Darwin Core (DwC) is a global standard for publishing biodiversity data, whose goal is to facilitate the sharing of biodiversity information, by providing identifiers, labels, and definitions <span class="citation">(Wieczorek et al. <a href="#ref-DwC-paper">2012</a>)</span>. DwC was established as an evolving community-developed standard, by the Biodiversity Information Standards Working Group (www.tdwg.org). DwC is a library of definitions of common biodiversity data terms, each of which represents a field within the database. There are around 200 such fields (not including DwC extensions); a full set of the DwC terms with their descriptions is available in the Quick Reference Guide (<a href="http://rs.tdwg.org/dwc/terms" class="uri">http://rs.tdwg.org/dwc/terms</a>). For more information see <a href="learn.html#learn"><code>Learn more</code> section</a>.</p>
+</div>
+<div id="why-its-important-to-darwinize-a-dataset" class="section level3 unnumbered">
+<h3>Why it’s important to “Darwinize” a dataset</h3>
+<p>Running the Darwinizer enables you to standardize many field names in your dataset – and that allows the <code>bdverse</code> to handle data from various biodiversity portals seamlessly, and lets you enjoy all of <code>bdvers</code> features, regardless of publishers variation in field names.</p>
+</div>
+</div>
+<div id="shiny-app" class="section level2">
+<h2><span class="header-section-number">2.2</span> Shiny app</h2>
+<div id="launching-the-app" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Launching the app</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">library</span>(bdDwC) <span class="co"># Laod package library</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="kw">runDwC</span>() <span class="co"># Launch the app</span></a></code></pre></div>
+</div>
+<div id="app-overview" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> App overview</h3>
+<p><img src="images/bdDwC_Getting_started.png" title="The first screen" alt="bdDwC App Overview" />
+<strong><span style="color:red">–&gt; To replace with the new app &lt;–</span></strong>
+In the first screen, you’ll need to load your biodiversity data; choose dictionary and run the Darwinizer. There are two options, form a file on your computer, of fetch from a web based data provider.</p>
+</div>
+<div id="dataupload" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Data upload</h3>
+<div id="from-a-local-file" class="section level4">
+<h4><span class="header-section-number">2.2.3.1</span> From a local file</h4>
+<p>A CSV file or a Darwin Core Archive (DwC-A) zip file can be uploaded.</p>
+<p><img src="images/bdDwC_Up-local_file.png" title="bdDwC-app data-upload-local" alt="Data upload from a local file" />
+<strong><span style="color:red">–&gt; To replace with the new app &lt;–</span></strong></p>
+</div>
+</div>
+<div id="datadownload" class="section level3">
+<h3><span class="header-section-number">2.2.4</span> From an online database</h3>
+<p>Also, data can be retrieved directly from various online biodiversity databases. You need only to:</p>
+<ul>
+<li>Select the database</li>
+<li>Specify the desired scientific name.</li>
+<li>Specify the number of records (upper limit of 50,000).</li>
+<li>Check the box if records must have coordinates.</li>
+<li>Wait for data to be downloaded.</li>
+</ul>
+<p><img src="images/bdDwC_Up-database.png" title="bdDwC-app data-upload-database" alt="Data upload from online biodiversity databases" />
+<strong><span style="color:red">–&gt; To replace with the new app &lt;–</span></strong></p>
+</div>
+</div>
+<div id="dictionaries" class="section level2">
+<h2><span class="header-section-number">2.3</span> Dictionaries</h2>
+<p>A dictionary is a key component when Darwinizing a dataset. It’s basically a lookup table that lists a possible variation of field name and it corresponding DwC name.</p>
+<div id="the-darwin-cloud-dictionary" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> The Darwin Cloud dictionary</h3>
+<p>The Darwin Cloud dictionary <span class="citation">(Wieczorek et al. <a href="#ref-DarwinCloud">2017</a>)</span>, is a lookup table that accumulates different variations in DwC field names from different publishers. This valuable and critical dictionary was created and is maintained by the Kurator project (<a href="http://kurator.acis.ufl.edu/kurator-web/" class="uri">http://kurator.acis.ufl.edu/kurator-web/</a>), which provides workflow tools for data quality improvement of biodiversity data, via a user-friendly web interface. The development of bdDwC was inspired by <a href= https://github.com/kurator-org/kurator-validation/wiki/CSV-File-Darwinizer target="_blank">Kurator’s own Darwinizer</a>.</p>
+<div id="updating-the-darwin-cloud-dictionary" class="section level4 unnumbered">
+<h4>Updating the Darwin Cloud dictionary</h4>
+<p>It’s recommended to update the Darwin Cloud dictionary file. This can be done easily by clicking the <strong>Update DC</strong> button.</p>
+<p><img src="images/bdDwC_update-DC.png" title="bdDwC-app bdDwC_update-DC" alt="Updating the Darwin Cloud dictionary" />
+<strong><span style="color:red">–&gt; To replace with the new app &lt;–</span></strong></p>
+</div>
+</div>
+<div id="custom-dictionary" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Custom dictionary</h3>
+<p>It’s also possible to add your own dictionary by creating a CSV file with two columns, one for the Field Names and one for the Standard Names. After uploading the custom disctionary, we need to specify which field denotes the ‘User fierld names’ and which is the ‘Standard (DwC) field names’.</p>
+<p><img src="images/bdDwC_personal_dictionary.png" title="bdDwC-app personal dictionary" alt="Uploading your own dictionary" />
+<strong><span style="color:red">–&gt; To replace with the new app &lt;–</span></strong></p>
+</div>
+</div>
+<div id="darwinizing-your-dataset" class="section level2">
+<h2><span class="header-section-number">2.4</span> Darwinizing your dataset</h2>
+<p>Once a dataset is uploaded, the ‘Submit to Darwinizer’ button is activated, Clicking it will begin the interactive ‘Darwinize the dataset’ process.</p>
+<p><img src="images/bdDwC_Submit.png" title="bdDwC-app Submit button" alt="Submit to Darwinizer button" />
+<strong><span style="color:red">–&gt; To replace with the new app &lt;–</span></strong></p>
+<div id="darwinizer-results" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> Darwinizer results</h3>
+<p>Results page overwiew</p>
+<p><img src="images/bdDwC_Darwinizer_results.png" title="bdDwC-app Darwinizer results" alt="Darwinizer results" />
+<strong><span style="color:red">–&gt; To replace with the new app &lt;–</span></strong></p>
+<p>Manually renaming field names can be done very easily, just choose the two corresponding fields and click the Rename button.</p>
+<div class="figure">
+<img src="images/bdDwC_Manual_rename.png" title="bdDwC-app Manual renaming" alt="Manually renaming fields" />
+<p class="caption">Manually renaming fields</p>
+</div>
+<p><strong><span style="color:red">–&gt; To replace with the new app &lt;–</span></strong></p>
+<p>Hovering over a DwC standard name will display its description.</p>
+</div>
+<div id="download-your-darwinized-data" class="section level3">
+<h3><span class="header-section-number">2.4.2</span> Download your Darwinized data</h3>
+</div>
+<div id="closing-the-app" class="section level3">
+<h3><span class="header-section-number">2.4.3</span> Closing the app</h3>
+<p>Just close the app browser tab, and the R session will be terminated. To reopen it run in the R Console <code>runDwC()</code>.</p>
+</div>
+</div>
+<div id="command-line-operations" class="section level2">
+<h2><span class="header-section-number">2.5</span> Command line operations</h2>
+<p><strong><span style="color:red">–&gt; To synchronize functions with the new version!!!! &lt;–</span></strong></p>
+</div>
+<div id="load-package" class="section level2">
+<h2><span class="header-section-number">2.6</span> Load package</h2>
+<p>Load the <code>bdDwC</code> package</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">    <span class="kw">library</span>(bdDwC)</a></code></pre></div>
+</div>
+<div id="darwinizing-a-dataset" class="section level2">
+<h2><span class="header-section-number">2.7</span> Darwinizing a dataset</h2>
+<p><code>bdDwC</code> contains Indian Reptile dataset <code>bdDwC:::dataReptiles</code>.</p>
+<p>The function to Darwinize a dataset is<code>darwinizeNames</code> (replace <code>bdDwC:::dataReptiles</code> with wanted dataset):</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">result &lt;-<span class="st"> </span><span class="kw">darwinizeNames</span>(<span class="dt">dataUser =</span> bdDwC<span class="op">:::</span>dataReptiles,</a>
+<a class="sourceLine" id="cb6-2" title="2">                            <span class="dt">dataDWC   =</span> bdDwC<span class="op">:::</span>dataDarwinCloud<span class="op">$</span>data)</a></code></pre></div>
+<p>You can replace <code>bdDwC:::dataReptiles</code> with your dataset</p>
+<p>Rename your dataset field names to Darwinized names using <code>renameUserData</code>:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">renameUserData</span>(bdDwC<span class="op">:::</span>dataReptiles, result)</a></code></pre></div>
+</div>
+<div id="updating-the-darwin-cloud-dictionary-1" class="section level2">
+<h2><span class="header-section-number">2.8</span> Updating <a href="bddwc.html#the-darwin-cloud-dictionary">the Darwin Cloud dictionary</a></h2>
+<p>To get newest version of Darwin Cloud Data run:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">downloadCloudData</span>()</a></code></pre></div>
+<p>which will download data from the remote repository and extract field and standard names.</p>
+</div>
+<div id="a-case-study" class="section level2">
+<h2><span class="header-section-number">2.9</span> A case study</h2>
+<div id="case-study-title" class="section level3 unnumbered">
+<h3>Case study title</h3>
+<hr />
+<p><strong><span style="color:red">[ TBA ]</span></strong></p>
+
+</div>
+</div>
+</div>
+<h3> References</h3>
+<div id="refs" class="references">
+<div id="ref-DwC-paper">
+<p>Wieczorek, John, David Bloom, Robert Guralnick, Stan Blum, Markus Döring, Renato Giovanni, Tim Robertson, and David Vieglais. 2012. “Darwin Core: an evolving community-developed biodiversity data standard.” <em>PloS One</em> 7 (1): e29715.</p>
+</div>
+<div id="ref-DarwinCloud">
+<p>Wieczorek, John, Paul J. Morris, James Hanken, David B.Lowery, Bertram Ludäscher, James Macklin, Timothy McPhillips, Robert A.Morris, and Qian Zhang. 2017. “Darwin Cloud: Mapping Real-World Data to Darwin Core.” <em>Biodiversity Information Science and Standards</em> 1: e20486. <a href="https://doi.org/10.3897/tdwgproceedings.1.20486">https://doi.org/10.3897/tdwgproceedings.1.20486</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="start.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bdchecks.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/bd-R/bdverse-developing-guide/edit/dev/bddwc.Rmd",
+"text": "Edit this chapter"
+},
+"history": {
+"link": "https://github.com/bd-R/bdverse-developing-guide/commits/master/bddwc.Rmd",
+"text": "Chapter edit history"
+},
+"download": ["bdverse-dev-guide.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

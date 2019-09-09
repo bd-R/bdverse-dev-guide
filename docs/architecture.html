@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Architecture | bdverse: Development Guide</title>
+  <meta name="description" content="… TBA" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Architecture | bdverse: Development Guide" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://bd-R.github.io/bdverse-dev-guide/" />
+  <meta property="og:image" content="https://bd-R.github.io/bdverse-dev-guide/images/under_construction.png" />
+  <meta property="og:description" content="… TBA" />
+  <meta name="github-repo" content="bd-R/bdverse-dev-guide" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Architecture | bdverse: Development Guide" />
+  
+  <meta name="twitter:description" content="… TBA" />
+  <meta name="twitter:image" content="https://bd-R.github.io/bdverse-dev-guide/images/under_construction.png" />
+
+<meta name="author" content="The bdverse team" />
+
+
+<meta name="date" content="2019-09-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/bd-R_icon.png" />
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="users.html"/>
+<link rel="next" href="weakness.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">bdverse: User Guide</a></li>
+
+<li class="divider"></li>
+<li><a href="index.html#section"></a></li>
+<li class="chapter" data-level="" data-path="about-this-development-guide.html"><a href="about-this-development-guide.html"><i class="fa fa-check"></i>About this development guide</a></li>
+<li class="chapter" data-level="1" data-path="users.html"><a href="users.html"><i class="fa fa-check"></i><b>1</b> <code>bdverse</code> users</a><ul>
+<li class="chapter" data-level="1.1" data-path="users.html"><a href="users.html#section-1"><i class="fa fa-check"></i><b>1.1</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="architecture.html"><a href="architecture.html"><i class="fa fa-check"></i><b>2</b> Architecture</a><ul>
+<li><a href="architecture.html#overall-bdversarchitecture">Overall <code>bdvers</code>architecture</a></li>
+<li class="chapter" data-level="" data-path="architecture.html"><a href="architecture.html#packages"><i class="fa fa-check"></i>Packages:</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="architecture.html"><a href="architecture.html#bddwc"><i class="fa fa-check"></i><b>2.0.1</b> <code>bddwc</code></a></li>
+<li class="chapter" data-level="2.0.2" data-path="architecture.html"><a href="architecture.html#bddwc.app"><i class="fa fa-check"></i><b>2.0.2</b> <code>bddwc.app</code></a></li>
+<li class="chapter" data-level="2.0.3" data-path="architecture.html"><a href="architecture.html#bdchecks"><i class="fa fa-check"></i><b>2.0.3</b> <code>bdchecks</code></a></li>
+<li class="chapter" data-level="2.0.4" data-path="architecture.html"><a href="architecture.html#bdchecks.app"><i class="fa fa-check"></i><b>2.0.4</b> <code>bdchecks.app</code></a></li>
+<li class="chapter" data-level="2.0.5" data-path="architecture.html"><a href="architecture.html#bdclean"><i class="fa fa-check"></i><b>2.0.5</b> <code>bdclean</code></a></li>
+<li class="chapter" data-level="2.0.6" data-path="architecture.html"><a href="architecture.html#bdutilities"><i class="fa fa-check"></i><b>2.0.6</b> <code>bdutilities</code></a></li>
+<li class="chapter" data-level="2.0.7" data-path="architecture.html"><a href="architecture.html#bdutilities.app"><i class="fa fa-check"></i><b>2.0.7</b> <code>bdutilities.app</code></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="architecture.html"><a href="architecture.html#packages-in-the-making"><i class="fa fa-check"></i>Packages in the making</a><ul>
+<li class="chapter" data-level="2.0.8" data-path="architecture.html"><a href="architecture.html#bdvis"><i class="fa fa-check"></i><b>2.0.8</b> <code>bdvis</code></a></li>
+<li class="chapter" data-level="2.0.9" data-path="architecture.html"><a href="architecture.html#bdtools"><i class="fa fa-check"></i><b>2.0.9</b> <code>bdtools</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="weakness.html"><a href="weakness.html"><i class="fa fa-check"></i><b>3</b> Weaknesses</a><ul>
+<li class="chapter" data-level="3.1" data-path="weakness.html"><a href="weakness.html#section-2"><i class="fa fa-check"></i><b>3.1</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="QA.html"><a href="QA.html"><i class="fa fa-check"></i><b>4</b> QA framework</a><ul>
+<li class="chapter" data-level="4.1" data-path="QA.html"><a href="QA.html#unit-testing"><i class="fa fa-check"></i><b>4.1</b> Unit testing</a></li>
+<li class="chapter" data-level="4.2" data-path="QA.html"><a href="QA.html#shinytest"><i class="fa fa-check"></i><b>4.2</b> shinytest</a></li>
+<li class="chapter" data-level="4.3" data-path="QA.html"><a href="QA.html#defensive-programing"><i class="fa fa-check"></i><b>4.3</b> Defensive programing</a></li>
+<li class="chapter" data-level="4.4" data-path="QA.html"><a href="QA.html#ci"><i class="fa fa-check"></i><b>4.4</b> CI</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="dev-env.html"><a href="dev-env.html"><i class="fa fa-check"></i><b>5</b> Development environment</a><ul>
+<li class="chapter" data-level="5.1" data-path="dev-env.html"><a href="dev-env.html#section-3"><i class="fa fa-check"></i><b>5.1</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="maintenance.html"><a href="maintenance.html"><i class="fa fa-check"></i><b>6</b> Maintenance best practicet</a><ul>
+<li class="chapter" data-level="6.1" data-path="maintenance.html"><a href="maintenance.html#section-4"><i class="fa fa-check"></i><b>6.1</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="planning.html"><a href="planning.html"><i class="fa fa-check"></i><b>7</b> Project planning and idea farming</a><ul>
+<li class="chapter" data-level="7.1" data-path="planning.html"><a href="planning.html#section-5"><i class="fa fa-check"></i><b>7.1</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="help.html"><a href="help.html"><i class="fa fa-check"></i><b>8</b> Asking for help</a><ul>
+<li class="chapter" data-level="8.1" data-path="help.html"><a href="help.html#describing-concrete-problems"><i class="fa fa-check"></i><b>8.1</b> describing concrete problems</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="guidenews.html"><a href="guidenews.html"><i class="fa fa-check"></i><b>9</b> Guide release notes</a><ul>
+<li class="chapter" data-level="9.1" data-path="guidenews.html"><a href="guidenews.html#section-6"><i class="fa fa-check"></i><b>9.1</b> 0.0.1</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>10</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://bd-r.github.io/The-bdverse/the-bdverse-team.html" target="_blank"> (c) The bdverse team</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">bdverse: Development Guide</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="architecture" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Architecture</h1>
+<div id="overall-bdversarchitecture" class="section level2 unnumbered">
+<h2>Overall <code>bdvers</code>architecture</h2>
+</div>
+<div id="packages" class="section level2 unnumbered">
+<h2>Packages:</h2>
+<div id="bddwc" class="section level3">
+<h3><span class="header-section-number">2.0.1</span> <code>bddwc</code></h3>
+</div>
+<div id="bddwc.app" class="section level3">
+<h3><span class="header-section-number">2.0.2</span> <code>bddwc.app</code></h3>
+</div>
+<div id="bdchecks" class="section level3">
+<h3><span class="header-section-number">2.0.3</span> <code>bdchecks</code></h3>
+</div>
+<div id="bdchecks.app" class="section level3">
+<h3><span class="header-section-number">2.0.4</span> <code>bdchecks.app</code></h3>
+</div>
+<div id="bdclean" class="section level3">
+<h3><span class="header-section-number">2.0.5</span> <code>bdclean</code></h3>
+</div>
+<div id="bdutilities" class="section level3">
+<h3><span class="header-section-number">2.0.6</span> <code>bdutilities</code></h3>
+</div>
+<div id="bdutilities.app" class="section level3">
+<h3><span class="header-section-number">2.0.7</span> <code>bdutilities.app</code></h3>
+</div>
+</div>
+<div id="packages-in-the-making" class="section level2 unnumbered">
+<h2>Packages in the making</h2>
+<div id="bdvis" class="section level3">
+<h3><span class="header-section-number">2.0.8</span> <code>bdvis</code></h3>
+</div>
+<div id="bdtools" class="section level3">
+<h3><span class="header-section-number">2.0.9</span> <code>bdtools</code></h3>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="users.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="weakness.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/bd-R/bdverse-developing-guide/edit/dev/architecture.Rmd",
+"text": "Edit this chapter"
+},
+"history": {
+"link": "https://github.com/bd-R/bdverse-developing-guide/commits/master/architecture.Rmd",
+"text": "Chapter edit history"
+},
+"download": ["bdverse-dev-guide.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
