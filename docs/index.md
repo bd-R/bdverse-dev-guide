@@ -1,7 +1,7 @@
 --- 
 title: "bdverse: Development Guide"
 author: "The bdverse team"
-date: "2019-09-09"
+date: "2019-10-19"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib]
@@ -11,9 +11,10 @@ github-repo: bd-R/bdverse-dev-guide
 url: 'https\://bd-R.github.io/bdverse-dev-guide/'
 description: "... TBA"
 cover-image: images/under_construction.png
-apple-touch-icon: "images/bd-R_icon.png"
+apple-touch-icon: "images/apple-touch-icon.png"
 apple-touch-icon-size: 120
 favicon: "images/favicon.ico"
+always_allow_html: yes
 ---
 
 

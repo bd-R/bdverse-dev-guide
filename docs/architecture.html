@@ -24,12 +24,12 @@
 <meta name="author" content="The bdverse team" />
 
 
-<meta name="date" content="2019-09-09" />
+<meta name="date" content="2019-10-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/bd-R_icon.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/apple-touch-icon.png" />
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="users.html"/>
 <link rel="next" href="weakness.html"/>
@@ -47,6 +47,17 @@
 
 
 
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="libs/vis-4.20.1/vis.css" rel="stylesheet" />
+<script src="libs/vis-4.20.1/vis.min.js"></script>
+<script src="libs/visNetwork-binding-2.0.8/visNetwork.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.8/datatables.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
 
 
 
@@ -73,18 +84,17 @@
 </ul></li>
 <li class="chapter" data-level="2" data-path="architecture.html"><a href="architecture.html"><i class="fa fa-check"></i><b>2</b> Architecture</a><ul>
 <li><a href="architecture.html#overall-bdversarchitecture">Overall <code>bdvers</code>architecture</a></li>
-<li class="chapter" data-level="" data-path="architecture.html"><a href="architecture.html#packages"><i class="fa fa-check"></i>Packages:</a><ul>
-<li class="chapter" data-level="2.0.1" data-path="architecture.html"><a href="architecture.html#bddwc"><i class="fa fa-check"></i><b>2.0.1</b> <code>bddwc</code></a></li>
-<li class="chapter" data-level="2.0.2" data-path="architecture.html"><a href="architecture.html#bddwc.app"><i class="fa fa-check"></i><b>2.0.2</b> <code>bddwc.app</code></a></li>
-<li class="chapter" data-level="2.0.3" data-path="architecture.html"><a href="architecture.html#bdchecks"><i class="fa fa-check"></i><b>2.0.3</b> <code>bdchecks</code></a></li>
-<li class="chapter" data-level="2.0.4" data-path="architecture.html"><a href="architecture.html#bdchecks.app"><i class="fa fa-check"></i><b>2.0.4</b> <code>bdchecks.app</code></a></li>
-<li class="chapter" data-level="2.0.5" data-path="architecture.html"><a href="architecture.html#bdclean"><i class="fa fa-check"></i><b>2.0.5</b> <code>bdclean</code></a></li>
-<li class="chapter" data-level="2.0.6" data-path="architecture.html"><a href="architecture.html#bdutilities"><i class="fa fa-check"></i><b>2.0.6</b> <code>bdutilities</code></a></li>
-<li class="chapter" data-level="2.0.7" data-path="architecture.html"><a href="architecture.html#bdutilities.app"><i class="fa fa-check"></i><b>2.0.7</b> <code>bdutilities.app</code></a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="architecture.html"><a href="architecture.html#packages"><i class="fa fa-check"></i>Packages:</a></li>
+<li class="chapter" data-level="2.1" data-path="architecture.html"><a href="architecture.html#bddwc"><i class="fa fa-check"></i><b>2.1</b> <code>bddwc</code></a></li>
+<li class="chapter" data-level="2.2" data-path="architecture.html"><a href="architecture.html#bddwc.app"><i class="fa fa-check"></i><b>2.2</b> <code>bddwc.app</code></a></li>
+<li class="chapter" data-level="2.3" data-path="architecture.html"><a href="architecture.html#bdchecks"><i class="fa fa-check"></i><b>2.3</b> <code>bdchecks</code></a></li>
+<li class="chapter" data-level="2.4" data-path="architecture.html"><a href="architecture.html#bdchecks.app"><i class="fa fa-check"></i><b>2.4</b> <code>bdchecks.app</code></a></li>
+<li class="chapter" data-level="2.5" data-path="architecture.html"><a href="architecture.html#bdclean"><i class="fa fa-check"></i><b>2.5</b> <code>bdclean</code></a></li>
+<li class="chapter" data-level="2.6" data-path="architecture.html"><a href="architecture.html#bdutilities"><i class="fa fa-check"></i><b>2.6</b> <code>bdutilities</code></a></li>
+<li class="chapter" data-level="2.7" data-path="architecture.html"><a href="architecture.html#bdutilities.app"><i class="fa fa-check"></i><b>2.7</b> <code>bdutilities.app</code></a></li>
 <li class="chapter" data-level="" data-path="architecture.html"><a href="architecture.html#packages-in-the-making"><i class="fa fa-check"></i>Packages in the making</a><ul>
-<li class="chapter" data-level="2.0.8" data-path="architecture.html"><a href="architecture.html#bdvis"><i class="fa fa-check"></i><b>2.0.8</b> <code>bdvis</code></a></li>
-<li class="chapter" data-level="2.0.9" data-path="architecture.html"><a href="architecture.html#bdtools"><i class="fa fa-check"></i><b>2.0.9</b> <code>bdtools</code></a></li>
+<li class="chapter" data-level="2.7.1" data-path="architecture.html"><a href="architecture.html#bdvis"><i class="fa fa-check"></i><b>2.7.1</b> <code>bdvis</code></a></li>
+<li class="chapter" data-level="2.7.2" data-path="architecture.html"><a href="architecture.html#bdtools"><i class="fa fa-check"></i><b>2.7.2</b> <code>bdtools</code></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="weakness.html"><a href="weakness.html"><i class="fa fa-check"></i><b>3</b> Weaknesses</a><ul>
@@ -139,35 +149,57 @@
 </div>
 <div id="packages" class="section level2 unnumbered">
 <h2>Packages:</h2>
-<div id="bddwc" class="section level3">
-<h3><span class="header-section-number">2.0.1</span> <code>bddwc</code></h3>
 </div>
-<div id="bddwc.app" class="section level3">
-<h3><span class="header-section-number">2.0.2</span> <code>bddwc.app</code></h3>
+<div id="bddwc" class="section level2">
+<h2><span class="header-section-number">2.1</span> <code>bddwc</code></h2>
+<div id="overview-design" class="section level4">
+<h4><span class="header-section-number">2.1.0.1</span> Overview Design</h4>
+<div class="figure"><span id="fig:unnamed-chunk-1"></span>
+<img src="images/arc/Arc_bddwc_overview.svg" alt="bddwc overview"  />
+<p class="caption">
+Figure 0.1: bddwc overview
+</p>
 </div>
-<div id="bdchecks" class="section level3">
-<h3><span class="header-section-number">2.0.3</span> <code>bdchecks</code></h3>
 </div>
-<div id="bdchecks.app" class="section level3">
-<h3><span class="header-section-number">2.0.4</span> <code>bdchecks.app</code></h3>
+<div id="r-functions-dependency-information" class="section level4">
+<h4><span class="header-section-number">2.1.0.2</span> R functions dependency &amp; information</h4>
+<div id="htmlwidget-23bc025cd4b4df164644" style="width:672px;height:480px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-23bc025cd4b4df164644">{"x":{"nodes":{"node":["clean_dwc","darwinize_names","download_cloud_data","get_darwin_core_info","link_old_new","rename_user_data","test_cloud","test_columns_cloud","test_data_dwc","test_data_renamed","test_data_user"],"type":["function","function","function","function","function","function","function","function","function","function","function"],"isExported":[false,true,true,false,false,true,false,false,false,false,false],"outDegree":[0,3,4,1,1,2,0,0,0,0,0],"inDegree":[2,0,0,0,0,0,2,1,2,2,2],"numRecursiveDeps":[0,3,4,1,1,2,0,0,0,0,0],"numRecursiveRevDeps":[2,0,0,0,0,0,2,1,2,2,2],"betweenness":[0,0,0,0,0,0,0,0,0,0,0],"pageRank":[0.0980874316939891,0.0655737704918033,0.0655737704918033,0.0655737704918033,0.0655737704918033,0.0655737704918033,0.135245901639344,0.0795081967213115,0.0980874316939891,0.149180327868852,0.112021857923497],"id":["clean_dwc","darwinize_names","download_cloud_data","get_darwin_core_info","link_old_new","rename_user_data","test_cloud","test_columns_cloud","test_data_dwc","test_data_renamed","test_data_user"],"label":["clean_dwc","darwinize_names","download_cloud_data","get_darwin_core_info","link_old_new","rename_user_data","test_cloud","test_columns_cloud","test_data_dwc","test_data_renamed","test_data_user"],"color":["#97C2FC","#97C2FC","#97C2FC","#97C2FC","#97C2FC","#97C2FC","#97C2FC","#97C2FC","#97C2FC","#97C2FC","#97C2FC"],"x":[0,0,0,0,0,0,0,0,0,-1,1],"y":[null,null,null,null,null,null,null,null,null,null,null]},"edges":{"SOURCE":["darwinize_names","darwinize_names","darwinize_names","download_cloud_data","download_cloud_data","download_cloud_data","download_cloud_data","get_darwin_core_info","link_old_new","rename_user_data","rename_user_data"],"TARGET":["clean_dwc","test_data_dwc","test_data_user","clean_dwc","test_cloud","test_columns_cloud","test_data_dwc","test_cloud","test_data_renamed","test_data_renamed","test_data_user"],"from":["darwinize_names","darwinize_names","darwinize_names","download_cloud_data","download_cloud_data","download_cloud_data","download_cloud_data","get_darwin_core_info","link_old_new","rename_user_data","rename_user_data"],"to":["clean_dwc","test_data_dwc","test_data_user","clean_dwc","test_cloud","test_columns_cloud","test_data_dwc","test_cloud","test_data_renamed","test_data_renamed","test_data_user"],"color":["#848484","#848484","#848484","#848484","#848484","#848484","#848484","#848484","#848484","#848484","#848484"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false},"manipulation":{"enabled":false},"edges":{"smooth":false,"arrows":"to"},"physics":{"stabilization":false},"layout":{"hierarchical":{"enabled":true,"edgeMinimization":false,"direction":"BU","sortMethod":"hubsize"}},"interaction":{"dragNodes":true,"dragView":true,"zoomView":false}},"groups":null,"width":null,"height":null,"idselection":{"enabled":true,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)"},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","igraphlayout":{"type":"square"},"highlight":{"enabled":true,"hoverNearest":false,"degree":{"from":11,"to":11},"algorithm":"hierarchical","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":false,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"},"tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-f5e841ec8859138ce882" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f5e841ec8859138ce882">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11"],["clean_dwc","darwinize_names","download_cloud_data","get_darwin_core_info","link_old_new","rename_user_data","test_cloud","test_columns_cloud","test_data_dwc","test_data_renamed","test_data_user"],["Clean Dictionary Data","Darwinize names","Download Darwin Cloud Data","Retrieve Information about Darwin Core Terms","Link Old/New Name for Checkboxes","Rename Dataset According to Darwinized Names","Test If Provided Path to Cloud Data is Valid","Test If Provided Columns of Cloud Data are Valid","Test If Provided Dictionary Data is Valid","Test If Provided Renaming Data is Valid","Test If Provided User Data is Valid"],["Clean dictionary from unnecessary or empty fields\n","`darwinize_names()` is a function to darwinize given names using a reference\n","`download_cloud_data()` is a function used to download Darwin Cloud\n","`get_darwin_core_info()` is a function (not exported) to download\n","`combine_old_new()` is a function that combines (`paste`) fieldname and\n","`rename_user_data()` is a function used to rename given dataset\n","Test If Provided Path to Cloud Data is Valid\n","Test If Provided Columns of Cloud Data are Valid\n","Test If Provided Dictionary Data is Valid\n","Test If Provided Renaming Data is Valid\n","Test If Provided User Data is Valid\n"],[false,true,true,false,false,true,false,false,false,false,false],["<a href=\"https://github.com/bd-R/bdDwC/blob/master/R/dictionary.R#L86\">Function<\/a>","<a href=\"https://github.com/bd-R/bdDwC/blob/master/R/darwinizer.R#L23\">Function<\/a>","<a href=\"https://github.com/bd-R/bdDwC/blob/master/R/dictionary.R#L27\">Function<\/a>","<a href=\"https://github.com/bd-R/bdDwC/blob/master/R/dictionary.R#L130\">Function<\/a>","<a href=\"https://github.com/bd-R/bdDwC/blob/master/R/darwinizer.R#L203\">Function<\/a>","<a href=\"https://github.com/bd-R/bdDwC/blob/master/R/darwinizer.R#L152\">Function<\/a>","<a href=\"https://github.com/bd-R/bdDwC/blob/master/R/test.R#L96\">Function<\/a>","<a href=\"https://github.com/bd-R/bdDwC/blob/master/R/test.R#L116\">Function<\/a>","<a href=\"https://github.com/bd-R/bdDwC/blob/master/R/test.R#L39\">Function<\/a>","<a href=\"https://github.com/bd-R/bdDwC/blob/master/R/test.R#L68\">Function<\/a>","<a href=\"https://github.com/bd-R/bdDwC/blob/master/R/test.R#L11\">Function<\/a>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>FunctionName<\/th>\n      <th>Title<\/th>\n      <th>Description<\/th>\n      <th>isExported<\/th>\n      <th>GithubURL<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":11,"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}],"lengthMenu":[10,11,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 </div>
-<div id="bdclean" class="section level3">
-<h3><span class="header-section-number">2.0.5</span> <code>bdclean</code></h3>
 </div>
-<div id="bdutilities" class="section level3">
-<h3><span class="header-section-number">2.0.6</span> <code>bdutilities</code></h3>
+<div id="bddwc.app" class="section level2">
+<h2><span class="header-section-number">2.2</span> <code>bddwc.app</code></h2>
+<div class="figure"><span id="fig:unnamed-chunk-2"></span>
+<img src="images/arc/Arc_bddwc_app.svg" alt="Shiny App overview"  />
+<p class="caption">
+Figure 2.1: Shiny App overview
+</p>
 </div>
-<div id="bdutilities.app" class="section level3">
-<h3><span class="header-section-number">2.0.7</span> <code>bdutilities.app</code></h3>
 </div>
+<div id="bdchecks" class="section level2">
+<h2><span class="header-section-number">2.3</span> <code>bdchecks</code></h2>
+</div>
+<div id="bdchecks.app" class="section level2">
+<h2><span class="header-section-number">2.4</span> <code>bdchecks.app</code></h2>
+</div>
+<div id="bdclean" class="section level2">
+<h2><span class="header-section-number">2.5</span> <code>bdclean</code></h2>
+</div>
+<div id="bdutilities" class="section level2">
+<h2><span class="header-section-number">2.6</span> <code>bdutilities</code></h2>
+</div>
+<div id="bdutilities.app" class="section level2">
+<h2><span class="header-section-number">2.7</span> <code>bdutilities.app</code></h2>
 </div>
 <div id="packages-in-the-making" class="section level2 unnumbered">
 <h2>Packages in the making</h2>
 <div id="bdvis" class="section level3">
-<h3><span class="header-section-number">2.0.8</span> <code>bdvis</code></h3>
+<h3><span class="header-section-number">2.7.1</span> <code>bdvis</code></h3>
 </div>
 <div id="bdtools" class="section level3">
-<h3><span class="header-section-number">2.0.9</span> <code>bdtools</code></h3>
+<h3><span class="header-section-number">2.7.2</span> <code>bdtools</code></h3>
 
 </div>
 </div>
