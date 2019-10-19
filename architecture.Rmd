@@ -60,17 +60,17 @@ tbl <-
   
   isExported = funcReporter2$graph_viz$x$nodes$isExported,
   
-  GithubURL = c('<a href="https://github.com/bd-R/bdDwC/blob/master/R/dictionary.R#L86">Function</a>',
-               '<a href="https://github.com/bd-R/bdDwC/blob/master/R/darwinizer.R#L23">Function</a>',
-               '<a href="https://github.com/bd-R/bdDwC/blob/master/R/dictionary.R#L27">Function</a>',
-               '<a href="https://github.com/bd-R/bdDwC/blob/master/R/dictionary.R#L130">Function</a>',
-               '<a href="https://github.com/bd-R/bdDwC/blob/master/R/darwinizer.R#L203">Function</a>',
-               '<a href="https://github.com/bd-R/bdDwC/blob/master/R/darwinizer.R#L152">Function</a>',
-               '<a href="https://github.com/bd-R/bdDwC/blob/master/R/test.R#L96">Function</a>',
-               '<a href="https://github.com/bd-R/bdDwC/blob/master/R/test.R#L116">Function</a>',
-               '<a href="https://github.com/bd-R/bdDwC/blob/master/R/test.R#L39">Function</a>',
-               '<a href="https://github.com/bd-R/bdDwC/blob/master/R/test.R#L68">Function</a>',
-               '<a href="https://github.com/bd-R/bdDwC/blob/master/R/test.R#L11">Function</a>'
+  GithubURL = c('<a href="https://github.com/bd-R/bdDwC/blob/master/R/dictionary.R#L86">Link</a>',
+               '<a href="https://github.com/bd-R/bdDwC/blob/master/R/darwinizer.R#L23">Link</a>',
+               '<a href="https://github.com/bd-R/bdDwC/blob/master/R/dictionary.R#L27">Link</a>',
+               '<a href="https://github.com/bd-R/bdDwC/blob/master/R/dictionary.R#L130">Link</a>',
+               '<a href="https://github.com/bd-R/bdDwC/blob/master/R/darwinizer.R#L203">Link</a>',
+               '<a href="https://github.com/bd-R/bdDwC/blob/master/R/darwinizer.R#L152">Link</a>',
+               '<a href="https://github.com/bd-R/bdDwC/blob/master/R/test.R#L96">Link</a>',
+               '<a href="https://github.com/bd-R/bdDwC/blob/master/R/test.R#L116">Link</a>',
+               '<a href="https://github.com/bd-R/bdDwC/blob/master/R/test.R#L39">Link</a>',
+               '<a href="https://github.com/bd-R/bdDwC/blob/master/R/test.R#L68">Link</a>',
+               '<a href="https://github.com/bd-R/bdDwC/blob/master/R/test.R#L11">Link</a>'
   ))
 ```
 ```{r use_dt, echo=FALSE}
@@ -84,10 +84,22 @@ knitr::include_graphics("images/arc/Arc_bddwc_app.svg")
 ```
 
 ## `bdchecks`
+#### Overview Design 
+
+```{r, echo = FALSE, fig.cap="bdchecks overview"}
+knitr::include_graphics("images/arc/Arc_bdchecks_overview.svg")
+```
 
 ## `bdchecks.app`
 
+```{r, echo = FALSE, fig.cap="bdchecks Shiny App"}
+knitr::include_graphics("images/arc/Arc_bdchecks_app.svg")
+```
 ## `bdclean`
+
+```{r, echo = FALSE, fig.cap="bdclean Shiny App"}
+knitr::include_graphics("images/arc/Arc_bdclean_app.svg")
+```
 
 ## `bdutilities`
 
