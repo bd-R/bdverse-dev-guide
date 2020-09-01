@@ -22,6 +22,6 @@ Imports:
 Remotes: 
   rstudio/htmltools,
   rstudio/bookdown,
-  rich-iannone/pkgattrs
-  tom-gu/githubinstall
+  rich-iannone/pkgattrs,
+  tom-gu/githubinstall,
   tom-gu/bdutilities
