@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 QA framework | bdverse: Development Guide</title>
+  <title>6 QA framework | bdverse: Development Guide</title>
   <meta name="description" content="… TBA" />
-  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 QA framework | bdverse: Development Guide" />
+  <meta property="og:title" content="6 QA framework | bdverse: Development Guide" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://bd-R.github.io/bdverse-dev-guide/" />
   <meta property="og:image" content="https://bd-R.github.io/bdverse-dev-guide/images/under_construction.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="bd-R/bdverse-dev-guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 QA framework | bdverse: Development Guide" />
+  <meta name="twitter:title" content="6 QA framework | bdverse: Development Guide" />
   
   <meta name="twitter:description" content="… TBA" />
   <meta name="twitter:image" content="https://bd-R.github.io/bdverse-dev-guide/images/under_construction.png" />
@@ -24,15 +24,15 @@
 <meta name="author" content="The bdverse team" />
 
 
-<meta name="date" content="2019-10-19" />
+<meta name="date" content="2020-08-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/apple-touch-icon.png" />
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="weakness.html"/>
-<link rel="next" href="dev-env.html"/>
+<link rel="prev" href="testing.html"/>
+<link rel="next" href="guidenews.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -40,6 +40,7 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
@@ -47,19 +48,86 @@
 
 
 
-<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <link href="libs/vis-4.20.1/vis.css" rel="stylesheet" />
 <script src="libs/vis-4.20.1/vis.min.js"></script>
-<script src="libs/visNetwork-binding-2.0.8/visNetwork.js"></script>
+<script src="libs/visNetwork-binding-2.0.9/visNetwork.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.8/datatables.js"></script>
-<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<script src="libs/datatables-binding-0.15/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -74,54 +142,86 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">bdverse: User Guide</a></li>
+<li><a href="./">bdverse: Development Guide</a></li>
 
 <li class="divider"></li>
 <li><a href="index.html#section"></a></li>
-<li class="chapter" data-level="" data-path="about-this-development-guide.html"><a href="about-this-development-guide.html"><i class="fa fa-check"></i>About this development guide</a></li>
-<li class="chapter" data-level="1" data-path="users.html"><a href="users.html"><i class="fa fa-check"></i><b>1</b> <code>bdverse</code> users</a><ul>
-<li class="chapter" data-level="1.1" data-path="users.html"><a href="users.html#section-1"><i class="fa fa-check"></i><b>1.1</b> </a></li>
+<li class="part"><span><b>I The bdverse Packages</b></span></li>
+<li class="chapter" data-level="1" data-path="bdverse.html"><a href="bdverse.html"><i class="fa fa-check"></i><b>1</b> <code>bdverse</code></a><ul>
+<li class="chapter" data-level="1.1" data-path="bdverse.html"><a href="bdverse.html#pkg-info"><i class="fa fa-check"></i><b>1.1</b> Pkg Info:</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="bdverse.html"><a href="bdverse.html#title"><i class="fa fa-check"></i><b>1.1.1</b> Title</a></li>
+<li class="chapter" data-level="1.1.2" data-path="bdverse.html"><a href="bdverse.html#description"><i class="fa fa-check"></i><b>1.1.2</b> Description</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="architecture.html"><a href="architecture.html"><i class="fa fa-check"></i><b>2</b> Architecture</a><ul>
+</ul></li>
+<li class="chapter" data-level="2" data-path="bddwc.html"><a href="bddwc.html"><i class="fa fa-check"></i><b>2</b> <code>bddwc</code></a><ul>
+<li class="chapter" data-level="2.1" data-path="bdverse.html"><a href="bdverse.html#pkg-info"><i class="fa fa-check"></i><b>2.1</b> Pkg Info:</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="bdverse.html"><a href="bdverse.html#title"><i class="fa fa-check"></i><b>2.1.1</b> Title</a></li>
+<li class="chapter" data-level="2.1.2" data-path="bdverse.html"><a href="bdverse.html#description"><i class="fa fa-check"></i><b>2.1.2</b> Description</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="bddwc.html"><a href="bddwc.html#pkg-architecture"><i class="fa fa-check"></i><b>2.2</b> Pkg Architecture</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="bddwc.html"><a href="bddwc.html#overview"><i class="fa fa-check"></i><b>2.2.1</b> Overview</a></li>
+<li class="chapter" data-level="2.2.2" data-path="bddwc.html"><a href="bddwc.html#r-functions-dependency-information"><i class="fa fa-check"></i><b>2.2.2</b> R functions dependency &amp; information</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="users.html"><a href="users.html"><i class="fa fa-check"></i><b>3</b> <code>bdverse</code> users</a><ul>
+<li class="chapter" data-level="3.1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>3.1</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="architecture.html"><a href="architecture.html"><i class="fa fa-check"></i><b>4</b> Architecture</a><ul>
 <li><a href="architecture.html#overall-bdversarchitecture">Overall <code>bdvers</code>architecture</a></li>
 <li class="chapter" data-level="" data-path="architecture.html"><a href="architecture.html#packages"><i class="fa fa-check"></i>Packages:</a></li>
-<li class="chapter" data-level="2.1" data-path="architecture.html"><a href="architecture.html#bddwc"><i class="fa fa-check"></i><b>2.1</b> <code>bddwc</code></a></li>
-<li class="chapter" data-level="2.2" data-path="architecture.html"><a href="architecture.html#bddwc.app"><i class="fa fa-check"></i><b>2.2</b> <code>bddwc.app</code></a></li>
-<li class="chapter" data-level="2.3" data-path="architecture.html"><a href="architecture.html#bdchecks"><i class="fa fa-check"></i><b>2.3</b> <code>bdchecks</code></a></li>
-<li class="chapter" data-level="2.4" data-path="architecture.html"><a href="architecture.html#bdchecks.app"><i class="fa fa-check"></i><b>2.4</b> <code>bdchecks.app</code></a></li>
-<li class="chapter" data-level="2.5" data-path="architecture.html"><a href="architecture.html#bdclean"><i class="fa fa-check"></i><b>2.5</b> <code>bdclean</code></a></li>
-<li class="chapter" data-level="2.6" data-path="architecture.html"><a href="architecture.html#bdutilities"><i class="fa fa-check"></i><b>2.6</b> <code>bdutilities</code></a></li>
-<li class="chapter" data-level="2.7" data-path="architecture.html"><a href="architecture.html#bdutilities.app"><i class="fa fa-check"></i><b>2.7</b> <code>bdutilities.app</code></a></li>
+<li class="chapter" data-level="4.1" data-path="bddwc.html"><a href="bddwc.html#bddwc"><i class="fa fa-check"></i><b>4.1</b> <code>bddwc</code></a></li>
+<li class="chapter" data-level="4.2" data-path="architecture.html"><a href="architecture.html#help-needed"><i class="fa fa-check"></i><b>4.2</b> <code>bddwc.app</code></a></li>
+<li class="chapter" data-level="4.3" data-path="architecture.html"><a href="architecture.html#bdchecks"><i class="fa fa-check"></i><b>4.3</b> <code>bdchecks</code></a></li>
+<li class="chapter" data-level="4.4" data-path="architecture.html"><a href="architecture.html#bdchecks.app"><i class="fa fa-check"></i><b>4.4</b> <code>bdchecks.app</code></a></li>
+<li class="chapter" data-level="4.5" data-path="architecture.html"><a href="architecture.html#bdclean"><i class="fa fa-check"></i><b>4.5</b> <code>bdclean</code></a></li>
+<li class="chapter" data-level="4.6" data-path="architecture.html"><a href="architecture.html#bdutilities"><i class="fa fa-check"></i><b>4.6</b> <code>bdutilities</code></a></li>
+<li class="chapter" data-level="4.7" data-path="architecture.html"><a href="architecture.html#bdutilities.app"><i class="fa fa-check"></i><b>4.7</b> <code>bdutilities.app</code></a></li>
 <li class="chapter" data-level="" data-path="architecture.html"><a href="architecture.html#packages-in-the-making"><i class="fa fa-check"></i>Packages in the making</a><ul>
-<li class="chapter" data-level="2.7.1" data-path="architecture.html"><a href="architecture.html#bdvis"><i class="fa fa-check"></i><b>2.7.1</b> <code>bdvis</code></a></li>
-<li class="chapter" data-level="2.7.2" data-path="architecture.html"><a href="architecture.html#bdtools"><i class="fa fa-check"></i><b>2.7.2</b> <code>bdtools</code></a></li>
+<li class="chapter" data-level="4.7.1" data-path="architecture.html"><a href="architecture.html#bdvis"><i class="fa fa-check"></i><b>4.7.1</b> <code>bdvis</code></a></li>
+<li class="chapter" data-level="4.7.2" data-path="architecture.html"><a href="architecture.html#bdtools"><i class="fa fa-check"></i><b>4.7.2</b> <code>bdtools</code></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="weakness.html"><a href="weakness.html"><i class="fa fa-check"></i><b>3</b> Weaknesses</a><ul>
-<li class="chapter" data-level="3.1" data-path="weakness.html"><a href="weakness.html#section-2"><i class="fa fa-check"></i><b>3.1</b> </a></li>
+<li class="part"><span><b>II DevOps</b></span></li>
+<li class="chapter" data-level="5" data-path="testing.html"><a href="testing.html"><i class="fa fa-check"></i><b>5</b> Automated Tests</a></li>
+<li class="chapter" data-level="6" data-path="QA.html"><a href="QA.html"><i class="fa fa-check"></i><b>6</b> QA framework</a><ul>
+<li class="chapter" data-level="6.1" data-path="QA.html"><a href="QA.html#unit-testing"><i class="fa fa-check"></i><b>6.1</b> Unit testing</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="QA.html"><a href="QA.html#create-a-test"><i class="fa fa-check"></i><b>6.1.1</b> Create a test</a></li>
+<li class="chapter" data-level="6.1.2" data-path="QA.html"><a href="QA.html#expect"><i class="fa fa-check"></i><b>6.1.2</b> Expect</a></li>
+<li class="chapter" data-level="6.1.3" data-path="QA.html"><a href="QA.html#expect-error"><i class="fa fa-check"></i><b>6.1.3</b> Expect error</a></li>
+<li class="chapter" data-level="6.1.4" data-path="QA.html"><a href="QA.html#expect-invisible"><i class="fa fa-check"></i><b>6.1.4</b> Expect invisible</a></li>
+<li class="chapter" data-level="6.1.5" data-path="QA.html"><a href="QA.html#expect-length"><i class="fa fa-check"></i><b>6.1.5</b> Expect length</a></li>
+<li class="chapter" data-level="6.1.6" data-path="QA.html"><a href="QA.html#expect-match"><i class="fa fa-check"></i><b>6.1.6</b> Expect match</a></li>
+<li class="chapter" data-level="6.1.7" data-path="QA.html"><a href="QA.html#expect-message"><i class="fa fa-check"></i><b>6.1.7</b> Expect message</a></li>
+<li class="chapter" data-level="6.1.8" data-path="QA.html"><a href="QA.html#expect-named"><i class="fa fa-check"></i><b>6.1.8</b> Expect named</a></li>
+<li class="chapter" data-level="6.1.9" data-path="QA.html"><a href="QA.html#expect-null"><i class="fa fa-check"></i><b>6.1.9</b> Expect null</a></li>
+<li class="chapter" data-level="6.1.10" data-path="QA.html"><a href="QA.html#expect-output"><i class="fa fa-check"></i><b>6.1.10</b> Expect output</a></li>
+<li class="chapter" data-level="6.1.11" data-path="QA.html"><a href="QA.html#expect-setequal"><i class="fa fa-check"></i><b>6.1.11</b> expect setequal</a></li>
+<li class="chapter" data-level="6.1.12" data-path="QA.html"><a href="QA.html#expect-silent"><i class="fa fa-check"></i><b>6.1.12</b> Expect silent</a></li>
+<li class="chapter" data-level="6.1.13" data-path="QA.html"><a href="QA.html#expect-vector"><i class="fa fa-check"></i><b>6.1.13</b> Expect vector</a></li>
+<li class="chapter" data-level="6.1.14" data-path="QA.html"><a href="QA.html#fail-success"><i class="fa fa-check"></i><b>6.1.14</b> Fail/ Success</a></li>
+<li class="chapter" data-level="6.1.15" data-path="QA.html"><a href="QA.html#fail-reporter"><i class="fa fa-check"></i><b>6.1.15</b> Fail reporter</a></li>
+<li class="chapter" data-level="6.1.16" data-path="QA.html"><a href="QA.html#check-inheritance"><i class="fa fa-check"></i><b>6.1.16</b> Check inheritance</a></li>
+<li class="chapter" data-level="6.1.17" data-path="QA.html"><a href="QA.html#logical-expectations"><i class="fa fa-check"></i><b>6.1.17</b> Logical expectations</a></li>
+<li class="chapter" data-level="6.1.18" data-path="QA.html"><a href="QA.html#skip-a-test"><i class="fa fa-check"></i><b>6.1.18</b> Skip a test</a></li>
+<li class="chapter" data-level="6.1.19" data-path="QA.html"><a href="QA.html#run-all-tests-with-custom-location-of-tests"><i class="fa fa-check"></i><b>6.1.19</b> run all tests with custom location of tests</a></li>
+<li class="chapter" data-level="6.1.20" data-path="QA.html"><a href="QA.html#c-unit-testing"><i class="fa fa-check"></i><b>6.1.20</b> C++ unit testing</a></li>
+<li class="chapter" data-level="6.1.21" data-path="QA.html"><a href="QA.html#regression-test"><i class="fa fa-check"></i><b>6.1.21</b> Regression test</a></li>
+<li class="chapter" data-level="6.1.22" data-path="QA.html"><a href="QA.html#automatic-testing"><i class="fa fa-check"></i><b>6.1.22</b> Automatic testing</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="QA.html"><a href="QA.html"><i class="fa fa-check"></i><b>4</b> QA framework</a><ul>
-<li class="chapter" data-level="4.1" data-path="QA.html"><a href="QA.html#unit-testing"><i class="fa fa-check"></i><b>4.1</b> Unit testing</a></li>
-<li class="chapter" data-level="4.2" data-path="QA.html"><a href="QA.html#shinytest"><i class="fa fa-check"></i><b>4.2</b> shinytest</a></li>
-<li class="chapter" data-level="4.3" data-path="QA.html"><a href="QA.html#defensive-programing"><i class="fa fa-check"></i><b>4.3</b> Defensive programing</a></li>
-<li class="chapter" data-level="4.4" data-path="QA.html"><a href="QA.html#ci"><i class="fa fa-check"></i><b>4.4</b> CI</a></li>
+<li class="chapter" data-level="6.2" data-path="QA.html"><a href="QA.html#shinytest"><i class="fa fa-check"></i><b>6.2</b> shinytest</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="QA.html"><a href="QA.html#install-shinytest"><i class="fa fa-check"></i><b>6.2.1</b> Install shinytest</a></li>
+<li class="chapter" data-level="6.2.2" data-path="QA.html"><a href="QA.html#record-a-test"><i class="fa fa-check"></i><b>6.2.2</b> Record a test</a></li>
+<li class="chapter" data-level="6.2.3" data-path="QA.html"><a href="QA.html#run-the-recorded-test"><i class="fa fa-check"></i><b>6.2.3</b> Run the recorded test</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="dev-env.html"><a href="dev-env.html"><i class="fa fa-check"></i><b>5</b> Development environment</a><ul>
-<li class="chapter" data-level="5.1" data-path="dev-env.html"><a href="dev-env.html#section-3"><i class="fa fa-check"></i><b>5.1</b> </a></li>
+<li class="chapter" data-level="6.3" data-path="QA.html"><a href="QA.html#defensive-programing"><i class="fa fa-check"></i><b>6.3</b> Defensive programing</a></li>
+<li class="chapter" data-level="6.4" data-path="QA.html"><a href="QA.html#ci"><i class="fa fa-check"></i><b>6.4</b> CI</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="QA.html"><a href="QA.html#tic"><i class="fa fa-check"></i><b>6.4.1</b> tic</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="maintenance.html"><a href="maintenance.html"><i class="fa fa-check"></i><b>6</b> Maintenance best practicet</a><ul>
-<li class="chapter" data-level="6.1" data-path="maintenance.html"><a href="maintenance.html#section-4"><i class="fa fa-check"></i><b>6.1</b> </a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="planning.html"><a href="planning.html"><i class="fa fa-check"></i><b>7</b> Project planning and idea farming</a><ul>
-<li class="chapter" data-level="7.1" data-path="planning.html"><a href="planning.html#section-5"><i class="fa fa-check"></i><b>7.1</b> </a></li>
+<li class="chapter" data-level="7" data-path="guidenews.html"><a href="guidenews.html"><i class="fa fa-check"></i><b>7</b> Guide release notes</a><ul>
+<li class="chapter" data-level="7.1" data-path="index.html"><a href="index.html#section"><i class="fa fa-check"></i><b>7.1</b> 0.0.1</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="help.html"><a href="help.html"><i class="fa fa-check"></i><b>8</b> Asking for help</a><ul>
-<li class="chapter" data-level="8.1" data-path="help.html"><a href="help.html#describing-concrete-problems"><i class="fa fa-check"></i><b>8.1</b> describing concrete problems</a></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="guidenews.html"><a href="guidenews.html"><i class="fa fa-check"></i><b>9</b> Guide release notes</a><ul>
-<li class="chapter" data-level="9.1" data-path="guidenews.html"><a href="guidenews.html#section-6"><i class="fa fa-check"></i><b>9.1</b> 0.0.1</a></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>10</b> References</a></li>
+<li class="chapter" data-level="8" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
 <li class="divider"></li>
 <li><a href="https://bd-r.github.io/The-bdverse/the-bdverse-team.html" target="_blank"> (c) The bdverse team</a></li>
 
@@ -143,19 +243,332 @@
 
             <section class="normal" id="section-">
 <div id="QA" class="section level1">
-<h1><span class="header-section-number">Chapter 4</span> QA framework</h1>
+<h1><span class="header-section-number">6</span> QA framework</h1>
 <div id="unit-testing" class="section level2">
-<h2><span class="header-section-number">4.1</span> Unit testing</h2>
+<h2><span class="header-section-number">6.1</span> Unit testing</h2>
+<div id="create-a-test" class="section level3">
+<h3><span class="header-section-number">6.1.1</span> Create a test</h3>
+<p>You can use below code to write a test. Make sure you have <code>testthat</code> package installed and loaded.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="QA.html#cb1-1"></a><span class="kw">test_that</span>(description_of_test, code_of_test)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="QA.html#cb2-1"></a>Example<span class="op">:</span></span>
+<span id="cb2-2"><a href="QA.html#cb2-2"></a><span class="kw">context</span>(<span class="st">&quot;Tests&quot;</span>)</span>
+<span id="cb2-3"><a href="QA.html#cb2-3"></a><span class="co"># These tests should either return error as it&#39;s intended or be silent</span></span>
+<span id="cb2-4"><a href="QA.html#cb2-4"></a><span class="kw">test_that</span>(<span class="st">&quot;User Data&quot;</span>, {</span>
+<span id="cb2-5"><a href="QA.html#cb2-5"></a>  <span class="kw">expect_error</span>(<span class="kw">test_data_user</span>())</span>
+<span id="cb2-6"><a href="QA.html#cb2-6"></a>  <span class="kw">expect_error</span>(<span class="kw">test_data_user</span>(<span class="kw">matrix</span>()))</span>
+<span id="cb2-7"><a href="QA.html#cb2-7"></a>  <span class="kw">expect_error</span>(<span class="kw">test_data_user</span>(<span class="kw">data.frame</span>()))</span>
+<span id="cb2-8"><a href="QA.html#cb2-8"></a>  foo &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dv">1</span>)</span>
+<span id="cb2-9"><a href="QA.html#cb2-9"></a>  <span class="kw">names</span>(foo) &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
+<span id="cb2-10"><a href="QA.html#cb2-10"></a>  <span class="kw">expect_error</span>(<span class="kw">test_data_user</span>(foo))</span>
+<span id="cb2-11"><a href="QA.html#cb2-11"></a>  <span class="kw">expect_warning</span>(<span class="kw">test_data_user</span>(<span class="kw">data.frame</span>(<span class="dt">a =</span> <span class="dv">1</span>, <span class="dt">a =</span> <span class="dv">2</span>, <span class="dt">check.names =</span> <span class="ot">FALSE</span>)))</span>
+<span id="cb2-12"><a href="QA.html#cb2-12"></a>  <span class="kw">expect_silent</span>(mtcars)</span>
+<span id="cb2-13"><a href="QA.html#cb2-13"></a>})</span></code></pre></div>
+<p>Now, we will look into what kind of tests are possible. Remember, below tests are like bricks, you can build anything with them. Idea should be to keep them simple and use as much as you like.
+### Equality expectations</p>
+<p>See if an object is equal to value.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="QA.html#cb3-1"></a><span class="kw">expect_identical</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="QA.html#cb4-1"></a><span class="kw">expect_equal</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="QA.html#cb5-1"></a><span class="kw">expect_equivalent</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="QA.html#cb6-1"></a><span class="kw">expect_reference</span>()</span></code></pre></div>
+</div>
+<div id="expect" class="section level3">
+<h3><span class="header-section-number">6.1.2</span> Expect</h3>
+<p>Use it for writing custom expectations.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="QA.html#cb7-1"></a><span class="kw">expect</span>(ok, failure_message, <span class="dt">info =</span> <span class="ot">NULL</span>, <span class="dt">srcref =</span> <span class="ot">NULL</span>, <span class="dt">trace =</span> <span class="ot">NULL</span>)</span></code></pre></div>
+</div>
+<div id="expect-error" class="section level3">
+<h3><span class="header-section-number">6.1.3</span> Expect error</h3>
+<p>Check if code throws an error.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="QA.html#cb8-1"></a><span class="kw">expect_error</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="QA.html#cb9-1"></a><span class="kw">expect_condition</span>()</span></code></pre></div>
+</div>
+<div id="expect-invisible" class="section level3">
+<h3><span class="header-section-number">6.1.4</span> Expect invisible</h3>
+<p>These are pretty cool tests as we can test the function which might return no visible output.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="QA.html#cb10-1"></a><span class="kw">expect_invisible</span>(call, <span class="dt">label =</span> <span class="ot">NULL</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="QA.html#cb11-1"></a><span class="kw">expect_visible</span>(call, <span class="dt">label =</span> <span class="ot">NULL</span>)</span></code></pre></div>
+</div>
+<div id="expect-length" class="section level3">
+<h3><span class="header-section-number">6.1.5</span> Expect length</h3>
+<p>It can be helpful to check length of a vector. See if it is as per requirement of software design or function desgn.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="QA.html#cb12-1"></a><span class="kw">expect_length</span>(object, n)</span>
+<span id="cb12-2"><a href="QA.html#cb12-2"></a><span class="co"># where n is length</span></span>
+<span id="cb12-3"><a href="QA.html#cb12-3"></a><span class="co"># expect_length(2:20, 18)</span></span></code></pre></div>
+</div>
+<div id="expect-match" class="section level3">
+<h3><span class="header-section-number">6.1.6</span> Expect match</h3>
+<p>Check if a string matches to regular expression.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="QA.html#cb13-1"></a><span class="kw">expect_match</span>( object_to_test, regular_expression)</span></code></pre></div>
+</div>
+<div id="expect-message" class="section level3">
+<h3><span class="header-section-number">6.1.7</span> Expect message</h3>
+<p>This can come handy when you want to check if the code you have written produces warning or messages.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="QA.html#cb14-1"></a><span class="kw">expect_message</span>(object)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="QA.html#cb15-1"></a>Example<span class="op">:</span></span>
+<span id="cb15-2"><a href="QA.html#cb15-2"></a>dummy_function &lt;-<span class="st"> </span><span class="cf">function</span>(a){</span>
+<span id="cb15-3"><a href="QA.html#cb15-3"></a>  <span class="cf">if</span> (a <span class="op">==</span><span class="st"> </span><span class="dv">0</span>){</span>
+<span id="cb15-4"><a href="QA.html#cb15-4"></a>    <span class="kw">message</span>(<span class="st">&quot;a is zero&quot;</span>)</span>
+<span id="cb15-5"><a href="QA.html#cb15-5"></a>    <span class="kw">return</span>(a)</span>
+<span id="cb15-6"><a href="QA.html#cb15-6"></a>  }</span>
+<span id="cb15-7"><a href="QA.html#cb15-7"></a>}</span>
+<span id="cb15-8"><a href="QA.html#cb15-8"></a><span class="kw">expect_message</span>(<span class="kw">dummy_function</span>(<span class="dv">0</span>), <span class="st">&quot;a is zero&quot;</span>)</span>
+<span id="cb15-9"><a href="QA.html#cb15-9"></a><span class="kw">expect_message</span>(<span class="kw">dummy_function</span>(<span class="dv">1</span>), <span class="ot">NA</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="QA.html#cb16-1"></a><span class="kw">expect_warning</span>(object)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="QA.html#cb17-1"></a>Example<span class="op">:</span></span>
+<span id="cb17-2"><a href="QA.html#cb17-2"></a>dummy_function &lt;-<span class="st"> </span><span class="cf">function</span>(a){</span>
+<span id="cb17-3"><a href="QA.html#cb17-3"></a>  <span class="cf">if</span> (a <span class="op">==</span><span class="st"> </span><span class="dv">0</span>){</span>
+<span id="cb17-4"><a href="QA.html#cb17-4"></a>    <span class="kw">warning</span>(<span class="st">&quot;a is zero&quot;</span>)</span>
+<span id="cb17-5"><a href="QA.html#cb17-5"></a>    <span class="kw">return</span>(a)</span>
+<span id="cb17-6"><a href="QA.html#cb17-6"></a>  }</span>
+<span id="cb17-7"><a href="QA.html#cb17-7"></a>}</span>
+<span id="cb17-8"><a href="QA.html#cb17-8"></a><span class="kw">expect_warning</span>(<span class="kw">dummy_function</span>(<span class="dv">0</span>), <span class="st">&quot;a is zero&quot;</span>)</span>
+<span id="cb17-9"><a href="QA.html#cb17-9"></a><span class="kw">expect_warning</span>(<span class="kw">dummy_function</span>(<span class="dv">1</span>), <span class="ot">NA</span>)</span></code></pre></div>
+</div>
+<div id="expect-named" class="section level3">
+<h3><span class="header-section-number">6.1.8</span> Expect named</h3>
+<p>Check if object have name(s). You can also check what it s and if there is no name at all.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="QA.html#cb18-1"></a><span class="co"># to check if object name is from character vector</span></span>
+<span id="cb18-2"><a href="QA.html#cb18-2"></a><span class="kw">expect_named</span>(object, expected_names)</span>
+<span id="cb18-3"><a href="QA.html#cb18-3"></a><span class="co"># to check if object name is absent</span></span>
+<span id="cb18-4"><a href="QA.html#cb18-4"></a><span class="kw">expect_named</span>(object, <span class="ot">NULL</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="QA.html#cb19-1"></a>Example<span class="op">:</span></span>
+<span id="cb19-2"><a href="QA.html#cb19-2"></a>a &lt;-<span class="st"> </span><span class="kw">c</span>( <span class="dt">x=</span> <span class="dv">0</span>, <span class="dt">y=</span> <span class="dv">1</span>)</span>
+<span id="cb19-3"><a href="QA.html#cb19-3"></a><span class="kw">expect_named</span>(a)</span>
+<span id="cb19-4"><a href="QA.html#cb19-4"></a><span class="kw">expect_named</span>(a, <span class="kw">c</span>(<span class="st">&quot;x&quot;</span>, <span class="st">&quot;y&quot;</span>))</span>
+<span id="cb19-5"><a href="QA.html#cb19-5"></a><span class="kw">expect_named</span>(a, <span class="ot">NULL</span>) <span class="co">#check absence of names</span></span></code></pre></div>
+</div>
+<div id="expect-null" class="section level3">
+<h3><span class="header-section-number">6.1.9</span> Expect null</h3>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="QA.html#cb20-1"></a><span class="kw">expect_null</span>(object)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="QA.html#cb21-1"></a>Example<span class="op">:</span></span>
+<span id="cb21-2"><a href="QA.html#cb21-2"></a>a &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
+<span id="cb21-3"><a href="QA.html#cb21-3"></a><span class="kw">expect_null</span>(a)</span>
+<span id="cb21-4"><a href="QA.html#cb21-4"></a><span class="co">#below is another way to check for equal</span></span>
+<span id="cb21-5"><a href="QA.html#cb21-5"></a><span class="kw">expect_equal</span>(a, <span class="ot">NULL</span>)</span>
+<span id="cb21-6"><a href="QA.html#cb21-6"></a><span class="co"># also you can check type of &#39;a&#39; object</span></span>
+<span id="cb21-7"><a href="QA.html#cb21-7"></a><span class="kw">expect_type</span>(a, <span class="st">&quot;NULL&quot;</span>)</span></code></pre></div>
+</div>
+<div id="expect-output" class="section level3">
+<h3><span class="header-section-number">6.1.10</span> Expect output</h3>
+<p>How to check if your code print output to the console.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="QA.html#cb22-1"></a><span class="kw">expect_output</span>( object, regular_expression)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="QA.html#cb23-1"></a>Example<span class="op">:</span></span>
+<span id="cb23-2"><a href="QA.html#cb23-2"></a></span>
+<span id="cb23-3"><a href="QA.html#cb23-3"></a><span class="kw">expect_output</span>(<span class="kw">str</span>(mtcars),<span class="st">&quot;11 variables&quot;</span>)</span></code></pre></div>
+</div>
+<div id="expect-setequal" class="section level3">
+<h3><span class="header-section-number">6.1.11</span> expect setequal</h3>
+<p>You canuse this test to check if two vectors contain the same values. We have two variants, <code>setequal</code> and <code>mapequal</code>.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="QA.html#cb24-1"></a><span class="kw">expect_setequal</span>(vector_<span class="dv">1</span>, vector_<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="QA.html#cb25-1"></a>list_ex &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">x =</span><span class="dv">0</span>, <span class="dt">y =</span><span class="dv">1</span>)</span>
+<span id="cb25-2"><a href="QA.html#cb25-2"></a><span class="kw">expect_mapequal</span>(list_ex, <span class="kw">list</span>(<span class="dt">x =</span><span class="dv">0</span>, <span class="dt">y =</span><span class="dv">1</span>))</span></code></pre></div>
+</div>
+<div id="expect-silent" class="section level3">
+<h3><span class="header-section-number">6.1.12</span> Expect silent</h3>
+<p>If you are sure that a code should not output any kind of output, messages or warnings, you can use this test.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="QA.html#cb26-1"></a><span class="kw">expect_silent</span>(object)</span></code></pre></div>
+</div>
+<div id="expect-vector" class="section level3">
+<h3><span class="header-section-number">6.1.13</span> Expect vector</h3>
+<p>You can check if an object has vector properties.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="QA.html#cb27-1"></a><span class="kw">expect_vector</span>(object)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="QA.html#cb28-1"></a>Example<span class="op">:</span></span>
+<span id="cb28-2"><a href="QA.html#cb28-2"></a><span class="cf">if</span> (<span class="kw">requireNamespace</span>(<span class="st">&quot;vctrs&quot;</span>)) {</span>
+<span id="cb28-3"><a href="QA.html#cb28-3"></a><span class="kw">expect_vector</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">ptype =</span> <span class="kw">integer</span>(), <span class="dt">size =</span> <span class="dv">10</span>)</span>
+<span id="cb28-4"><a href="QA.html#cb28-4"></a><span class="kw">show_failure</span>(<span class="kw">expect_vector</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">ptype =</span> <span class="kw">integer</span>(), <span class="dt">size =</span> <span class="dv">5</span>))</span>
+<span id="cb28-5"><a href="QA.html#cb28-5"></a><span class="kw">show_failure</span>(<span class="kw">expect_vector</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">ptype =</span> <span class="kw">character</span>(), <span class="dt">size =</span> <span class="dv">5</span>))</span>
+<span id="cb28-6"><a href="QA.html#cb28-6"></a>}</span></code></pre></div>
+</div>
+<div id="fail-success" class="section level3">
+<h3><span class="header-section-number">6.1.14</span> Fail/ Success</h3>
+<p>What if you want to manually trigger failure or success, you can do that easily.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="QA.html#cb29-1"></a><span class="kw">fail</span>(<span class="dt">message =</span> <span class="st">&quot;Failure has been forced&quot;</span>, <span class="dt">info =</span> <span class="ot">NULL</span>)</span>
+<span id="cb29-2"><a href="QA.html#cb29-2"></a><span class="kw">succeed</span>(<span class="dt">message =</span> <span class="st">&quot;Success has been forced&quot;</span>, <span class="dt">info =</span> <span class="ot">NULL</span>)</span></code></pre></div>
+</div>
+<div id="fail-reporter" class="section level3">
+<h3><span class="header-section-number">6.1.15</span> Fail reporter</h3>
+<p>This is a reporter. We will see few of them as we move forward. This throws an error if any test fails. This is usually combined with other reporters.</p>
+</div>
+<div id="check-inheritance" class="section level3">
+<h3><span class="header-section-number">6.1.16</span> Check inheritance</h3>
+<p>If you want a way to check if an object is inherited from S3 or S4 class,you can use these tests.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="QA.html#cb30-1"></a><span class="kw">expect_type</span>(x,type)</span>
+<span id="cb30-2"><a href="QA.html#cb30-2"></a><span class="kw">expect_s3_class</span>(x,class) <span class="co">#for s3</span></span>
+<span id="cb30-3"><a href="QA.html#cb30-3"></a><span class="kw">expect_s4_class</span>(x,class) <span class="co">#for s4</span></span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="QA.html#cb31-1"></a>Example<span class="op">:</span></span>
+<span id="cb31-2"><a href="QA.html#cb31-2"></a><span class="st">  </span></span>
+<span id="cb31-3"><a href="QA.html#cb31-3"></a><span class="kw">show_success</span>(<span class="kw">expect_s4_class</span>(a, <span class="st">&quot;data.frame&quot;</span>))</span>
+<span id="cb31-4"><a href="QA.html#cb31-4"></a><span class="kw">expect_type</span>(a<span class="op">$</span>y, <span class="st">&quot;integer&quot;</span>)</span></code></pre></div>
+</div>
+<div id="logical-expectations" class="section level3">
+<h3><span class="header-section-number">6.1.17</span> Logical expectations</h3>
+<p>These are used when other tests are not according to your expectations(Haha, no pun intended.) These are not very informative.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="QA.html#cb32-1"></a><span class="kw">expect_true</span>(object)</span>
+<span id="cb32-2"><a href="QA.html#cb32-2"></a><span class="kw">expect_false</span>(object)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="QA.html#cb33-1"></a>Example<span class="op">:</span></span>
+<span id="cb33-2"><a href="QA.html#cb33-2"></a>a &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">999</span></span>
+<span id="cb33-3"><a href="QA.html#cb33-3"></a><span class="kw">expect_true</span>( <span class="kw">length</span>(a) <span class="op">==</span><span class="st"> </span><span class="dv">999</span>)</span>
+<span id="cb33-4"><a href="QA.html#cb33-4"></a><span class="kw">expect_false</span>( <span class="kw">length</span>(a) <span class="op">==</span><span class="st"> </span><span class="dv">0</span>)</span>
+<span id="cb33-5"><a href="QA.html#cb33-5"></a><span class="kw">expect_equal</span>(<span class="kw">length</span>(a), <span class="dv">999</span>)</span></code></pre></div>
+</div>
+<div id="skip-a-test" class="section level3">
+<h3><span class="header-section-number">6.1.18</span> Skip a test</h3>
+<p>Assume you are developing something and you think you need to skip some tests or getting false failures. You are 100% sure about it. In that case,you can use <code>skip()</code> to skip tests as per requirement.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="QA.html#cb34-1"></a><span class="kw">skip</span>(message)</span></code></pre></div>
+<p>If you want to include conditions, you can do that too.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="QA.html#cb35-1"></a><span class="kw">skip_if_not</span>(condition, <span class="dt">message =</span> <span class="kw">deparse</span>(<span class="kw">substitute</span>(condition)))</span>
+<span id="cb35-2"><a href="QA.html#cb35-2"></a><span class="kw">skip_if</span>(condition, <span class="dt">message =</span> <span class="ot">NULL</span>)</span></code></pre></div>
+<p>To check if a package is installed. This can come handy for designing troubleshooting mechanism where packages are dependent on each other.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="QA.html#cb36-1"></a><span class="kw">skip_if_not_installed</span>(pkg, <span class="dt">minimum_version =</span> <span class="st">&quot;specify version&quot;</span>)</span></code></pre></div>
+<p>Skip if a host is offline. This is handy if a package depends on some website for a functionality and it is offline. Sometimes it’s not obvious where the failure occured, having tests on each step will save a lot of time.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="QA.html#cb37-1"></a><span class="kw">skip_if_offline</span>(<span class="dt">host =</span> <span class="st">&quot;bdverse.org&quot;</span>)</span></code></pre></div>
+<p>And lastly, these are service specific. If you are using CRAN, you may want to skip particular tests. Some</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="QA.html#cb38-1"></a><span class="kw">skip_on_cran</span>()</span>
+<span id="cb38-2"><a href="QA.html#cb38-2"></a><span class="kw">skip_on_bioc</span>() </span></code></pre></div>
+<p>To skip on a particular operating system.Supported: “windows”, “mac”,
+“linux” and “solaris”.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="QA.html#cb39-1"></a><span class="kw">skip_on_os</span>(os)</span></code></pre></div>
+<p>To skip on CI/CD and other services in your project workflow.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="QA.html#cb40-1"></a><span class="kw">skip_on_ci</span>()</span>
+<span id="cb40-2"><a href="QA.html#cb40-2"></a><span class="kw">skip_on_travis</span>()</span>
+<span id="cb40-3"><a href="QA.html#cb40-3"></a><span class="kw">skip_on_appveyor</span>()</span>
+<span id="cb40-4"><a href="QA.html#cb40-4"></a><span class="kw">skip_on_covr</span>()</span></code></pre></div>
+<p>For translation related.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="QA.html#cb41-1"></a><span class="kw">skip_if_translated</span>(<span class="dt">msgid =</span> <span class="st">&quot;&#39;%s&#39; not found&quot;</span>) <span class="co">#to check for translation</span></span></code></pre></div>
+</div>
+<div id="run-all-tests-with-custom-location-of-tests" class="section level3">
+<h3><span class="header-section-number">6.1.19</span> run all tests with custom location of tests</h3>
+<p>We may come across a case where you want to run few tests froma directory.
+<code>test_dir</code> helps to do just that.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="QA.html#cb42-1"></a><span class="kw">test_dir</span>(<span class="kw">testthat_examples</span>(), <span class="dt">reporter =</span> <span class="st">&quot;minimal&quot;</span>) <span class="co"># you can change reporter</span></span></code></pre></div>
+<p>Similarly, you have <code>test_file</code> to run tests from specific file.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="QA.html#cb43-1"></a><span class="co"># store path in path variable</span></span>
+<span id="cb43-2"><a href="QA.html#cb43-2"></a><span class="kw">test_file</span>(path, <span class="dt">reporter =</span> <span class="st">&quot;summary&quot;</span>) <span class="co"># you can change reporter</span></span></code></pre></div>
+<p>What if you want to locate a particular file in a testing directory to do some troubleshooting work. You can use <code>test_path</code> for that. It helps you find any test file inside <code>tests/testthat</code></p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="QA.html#cb44-1"></a><span class="kw">test_path</span>(<span class="st">&quot;path to file&quot;</span>)</span></code></pre></div>
+</div>
+<div id="c-unit-testing" class="section level3">
+<h3><span class="header-section-number">6.1.20</span> C++ unit testing</h3>
+<p>This will allow you to do C++ unit testing if needed.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="QA.html#cb45-1"></a><span class="kw">use_catch</span>(<span class="dt">dir =</span> <span class="kw">getwd</span>()) <span class="co">#directory of package</span></span></code></pre></div>
+</div>
+<div id="regression-test" class="section level3">
+<h3><span class="header-section-number">6.1.21</span> Regression test</h3>
+<p>We can do regresion test using <code>verify_output()</code> which s specifically designed for that. The output is intuitive. It can be used with git.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="QA.html#cb46-1"></a><span class="co"># The first argument would usually be `test_path(&quot;informative-name.txt&quot;`)</span></span>
+<span id="cb46-2"><a href="QA.html#cb46-2"></a><span class="co"># but that is not permitted in examples</span></span>
+<span id="cb46-3"><a href="QA.html#cb46-3"></a>path &lt;-<span class="st"> </span><span class="kw">tempfile</span>()</span>
+<span id="cb46-4"><a href="QA.html#cb46-4"></a><span class="kw">verify_output</span>(path, {</span>
+<span id="cb46-5"><a href="QA.html#cb46-5"></a><span class="kw">head</span>(mtcars)</span>
+<span id="cb46-6"><a href="QA.html#cb46-6"></a><span class="kw">log</span>(<span class="op">-</span><span class="dv">10</span>)=</span>
+<span id="cb46-7"><a href="QA.html#cb46-7"></a><span class="st">&quot;a&quot;</span> <span class="op">*</span><span class="st"> </span><span class="dv">3</span></span>
+<span id="cb46-8"><a href="QA.html#cb46-8"></a>})</span>
+<span id="cb46-9"><a href="QA.html#cb46-9"></a><span class="kw">writeLines</span>(<span class="kw">readLines</span>(path))</span>
+<span id="cb46-10"><a href="QA.html#cb46-10"></a><span class="co"># Use strings to create comments in the output</span></span>
+<span id="cb46-11"><a href="QA.html#cb46-11"></a><span class="kw">verify_output</span>(<span class="kw">tempfile</span>(), {</span>
+<span id="cb46-12"><a href="QA.html#cb46-12"></a><span class="st">&quot;Print method&quot;</span></span>
+<span id="cb46-13"><a href="QA.html#cb46-13"></a><span class="kw">head</span>(mtcars)</span>
+<span id="cb46-14"><a href="QA.html#cb46-14"></a><span class="st">&quot;Warning&quot;</span></span>
+<span id="cb46-15"><a href="QA.html#cb46-15"></a><span class="kw">log</span>(<span class="op">-</span><span class="dv">10</span>)</span>
+<span id="cb46-16"><a href="QA.html#cb46-16"></a><span class="st">&quot;Error&quot;</span></span>
+<span id="cb46-17"><a href="QA.html#cb46-17"></a><span class="st">&quot;a&quot;</span> <span class="op">*</span><span class="st"> </span><span class="dv">3</span></span>
+<span id="cb46-18"><a href="QA.html#cb46-18"></a>})</span>
+<span id="cb46-19"><a href="QA.html#cb46-19"></a><span class="co"># Use strings starting with # to create headings</span></span>
+<span id="cb46-20"><a href="QA.html#cb46-20"></a><span class="kw">verify_output</span>(<span class="kw">tempfile</span>(), {</span>
+<span id="cb46-21"><a href="QA.html#cb46-21"></a><span class="st">&quot;# Base functions&quot;</span></span>
+<span id="cb46-22"><a href="QA.html#cb46-22"></a><span class="kw">head</span>(mtcars)</span>
+<span id="cb46-23"><a href="QA.html#cb46-23"></a><span class="kw">log</span>(<span class="op">-</span><span class="dv">10</span>)</span>
+<span id="cb46-24"><a href="QA.html#cb46-24"></a><span class="st">&quot;a&quot;</span> <span class="op">*</span><span class="st"> </span><span class="dv">3</span></span>
+<span id="cb46-25"><a href="QA.html#cb46-25"></a>})</span></code></pre></div>
+</div>
+<div id="automatic-testing" class="section level3">
+<h3><span class="header-section-number">6.1.22</span> Automatic testing</h3>
+<p>Well what if you want to run tests after everychanges instead of running them manually. After all, once your testing infrastructure is up and running, you need not test the codebase manually everytime something changes. here <code>auto_test</code> and <code>auto_test_package</code> comes handy.</p>
+<p>When you are developing code. Run following.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="QA.html#cb47-1"></a><span class="kw">auto_test</span>(code_path,test_path, <span class="dt">reporter =</span> <span class="st">&quot;summary&quot;</span>)</span></code></pre></div>
+<p>And when you are working with a package, you can run following:</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="QA.html#cb48-1"></a><span class="kw">auto_test_package</span>(<span class="dt">pkg =</span> <span class="st">&quot;package_pa&quot;</span>, <span class="dt">reporter =</span> <span class="kw">default_reporter</span>(), <span class="dt">hash =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<p>These are pretty much every possible test with testthat. Stay tuned for more updates!</p>
+</div>
 </div>
 <div id="shinytest" class="section level2">
-<h2><span class="header-section-number">4.2</span> shinytest</h2>
+<h2><span class="header-section-number">6.2</span> shinytest</h2>
+<p><code>bdverse</code> uses shiny for various packages to build beautiful User Interfaces for different packages. Testing shiny applications is very easy and intuitive, Imagine it like recording a screen and then replaying it to make sure everything works as intended. You do not have to write manual tests either. It is that easy.
+Let’s begin.</p>
+<p><a href="https://rstudio.github.io/shinytest/articles/shinytest.html">Shiny tests</a> are a way to test Shiny applications.
+You can install it using following commands.</p>
+<div id="install-shinytest" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> Install shinytest</h3>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="QA.html#cb49-1"></a><span class="kw">library</span>(devtools)</span>
+<span id="cb49-2"><a href="QA.html#cb49-2"></a><span class="kw">install_github</span>(<span class="st">&quot;rstudio/shinytest&quot;</span>)</span></code></pre></div>
+</div>
+<div id="record-a-test" class="section level3">
+<h3><span class="header-section-number">6.2.2</span> Record a test</h3>
+<p>Shiny is a little didiffrent when it comes to testing. Here, we record them and then run the tests.</p>
+<p>To record tests, we run following command.</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="QA.html#cb50-1"></a><span class="kw">library</span>(shinytest)</span>
+<span id="cb50-2"><a href="QA.html#cb50-2"></a><span class="kw">recordTest</span>(<span class="st">&quot;/path_of_shinyapp&quot;</span>)</span></code></pre></div>
+<p>This puts the shiny app in testing/recording mode.
+You can then run the application and test it the way you think will be helpful to the bdverse.
+The tests will be recoreded and saved.</p>
+</div>
+<div id="run-the-recorded-test" class="section level3">
+<h3><span class="header-section-number">6.2.3</span> Run the recorded test</h3>
+<p>You can now run the recorded test using following command.</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="QA.html#cb51-1"></a><span class="kw">testApp</span>(<span class="st">&quot;/path_of_shinyapp&quot;</span>)</span></code></pre></div>
+<p>Another way of doing it. Here the second argument will get tests from <code>tests/</code> directory.</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="QA.html#cb52-1"></a><span class="co"># testApp(&quot;myshinyapp&quot;, &quot;mytest&quot;)</span></span></code></pre></div>
+<p>Note: “mytest” is just name of test script. You can change t n test event recorder if you want to.</p>
+<p>If you want to compare the results without rerunning the tests, you can use following command.</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="QA.html#cb53-1"></a><span class="kw">snapshotCompare</span>(<span class="st">&quot;path_of_shinyapp&quot;</span>, <span class="st">&quot;mytest&quot;</span>)</span>
+<span id="cb53-2"><a href="QA.html#cb53-2"></a><span class="co">#&quot;mytest&quot; s</span></span></code></pre></div>
+<p>You can visit <a href="https://rstudio.github.io/shinytest/articles/in-depth.html">here</a> for in depth tests if the above ones are not sufficient for your need.</p>
+</div>
 </div>
 <div id="defensive-programing" class="section level2">
-<h2><span class="header-section-number">4.3</span> Defensive programing</h2>
+<h2><span class="header-section-number">6.3</span> Defensive programing</h2>
+<p>Coming Soon!</p>
 </div>
 <div id="ci" class="section level2">
-<h2><span class="header-section-number">4.4</span> CI</h2>
+<h2><span class="header-section-number">6.4</span> CI</h2>
+<p>Work in progress.
+If you know that you want Travis CI to skip a build (e.g., you’ve just edited the ReadMe file), include [ci skip] or [skip ci] anywhere in the commit message.</p>
+<p>You can skip to <code>build</code> in Travis CI by putting keywords <code>[skip ci]</code> or <code>[ci skip]</code> in your commit messages. This can be used when doing minor changes such as fixing a typo in documentation,etc.</p>
+<div id="tic" class="section level3">
+<h3><span class="header-section-number">6.4.1</span> tic</h3>
+<div id="installation-with-r-studio." class="section level4">
+<h4><span class="header-section-number">6.4.1.1</span> Installation with R Studio.</h4>
+<p><code>remotes::install_github("ropensci/tic")</code></p>
+<p>then A <code>GITHUB_PAT</code> needs to be set to create the
+SSH key pair required for deployment on
+GitHub Actions. Please call
+<code>usethis::browse_github_pat()</code>, follow the
+instructions and then call <code>use_tic()</code>
+again.</p>
+<p>run <code>usethis::browse_github_pat()</code> This will open your github tokens page,may ask for your password.
+Generate the token with default settings provided and copy the token.
+Now run <code>usethis::edit_r_environ()</code>. This will open <code>.Renviron</code> file of your project and
+now write <code>GITHUB_PAT=you_token_key_here</code>. Make sure you add an empty new line below that line. Save the file. Restart R for changes to take place.</p>
+</div>
+<div id="for-new-user-of-tic" class="section level4">
+<h4><span class="header-section-number">6.4.1.2</span> for new user of tic</h4>
+<p>Run <code>tic::use_tic()</code></p>
+<p>If you already use tic and want to configure a new CI provider do the following</p>
+</div>
+<div id="for-github-actions" class="section level4">
+<h4><span class="header-section-number">6.4.1.3</span> For GitHub Actions</h4>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="QA.html#cb54-1"></a>tic<span class="op">::</span><span class="kw">use_ghactions_deploy</span>() <span class="co"># (optional for deployment)</span></span>
+<span id="cb54-2"><a href="QA.html#cb54-2"></a>tic<span class="op">::</span><span class="kw">use_ghactions_yml</span>() <span class="co"># optional: Change `type` arg to your liking</span></span>
+<span id="cb54-3"><a href="QA.html#cb54-3"></a>tic<span class="op">::</span><span class="kw">use_tic_r</span>(<span class="st">&quot;package&quot;</span>, <span class="dt">deploy_on =</span> <span class="st">&quot;ghactions&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="QA.html#cb55-1"></a>(all of the above <span class="cf">in</span> one call)</span>
+<span id="cb55-2"><a href="QA.html#cb55-2"></a>tic<span class="op">::</span><span class="kw">use_tic</span>(<span class="dt">wizard =</span> <span class="ot">FALSE</span>, <span class="dt">linux =</span> <span class="st">&quot;ghactions&quot;</span>, <span class="dt">mac =</span> <span class="st">&quot;ghactions&quot;</span>,</span>
+<span id="cb55-3"><a href="QA.html#cb55-3"></a><span class="dt">windows =</span> <span class="st">&quot;ghactions&quot;</span>, <span class="dt">matrix =</span> <span class="st">&quot;ghactions&quot;</span>, <span class="dt">deploy =</span> <span class="st">&quot;ghactions&quot;</span>)</span>
+<span id="cb55-4"><a href="QA.html#cb55-4"></a>tic<span class="op">::</span><span class="kw">use_tic_badge</span>(<span class="st">&quot;ghactions&quot;</span>)</span>
+<span id="cb55-5"><a href="QA.html#cb55-5"></a>tic<span class="op">::</span><span class="kw">use_update_tic</span>()</span></code></pre></div>
+<p>You can use <code>usethis::edit_file('.github/workflows/tic.yml')</code> to edit the tic file and comment out platforms.</p>
 
+</div>
+</div>
 </div>
 </div>
             </section>
@@ -163,17 +576,19 @@
           </div>
         </div>
       </div>
-<a href="weakness.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="dev-env.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="testing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="guidenews.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -181,12 +596,11 @@ gitbook.start({
 "github": true,
 "facebook": false,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -194,16 +608,20 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/bd-R/bdverse-developing-guide/edit/dev/QA.Rmd",
+"link": "https://github.com/bd-R/bdverse-dev-guide/edit/dev/QA.Rmd",
 "text": "Edit this chapter"
 },
 "history": {
-"link": "https://github.com/bd-R/bdverse-developing-guide/commits/master/QA.Rmd",
+"link": "https://github.com/bd-R/bdverse-dev-guide/commits/master/QA.Rmd",
 "text": "Chapter edit history"
+},
+"view": {
+"link": null,
+"text": null
 },
 "download": ["bdverse-dev-guide.pdf"],
 "toc": {
-"collapse": "subsection"
+"collapse": "section"
 }
 });
 });

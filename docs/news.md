@@ -1,4 +1,6 @@
-# Guide release notes {#guidenews}
+# (APPENDIX) Appendix {-}
+
+# NEWS {#booknews}
 
 ## 0.0.1
 

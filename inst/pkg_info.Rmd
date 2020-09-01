@@ -1,0 +1,63 @@
+---
+title: "Pkg Info (source documentation file)"
+output: html_document
+---
+
+# Pkg info setup
+```{r, eval = T, include = TRUE, results='asis'}
+PKG = 'bdDwC' # Package name
+WAI = c('readme', 'website', 'user_guide', 'dev_guide') # Setup 'Where Am I?' (for conditioning sections of a code chunk)
+H = 1 # Setup top header level within a code chunk
+```
+
+# Pkg info chunk 1
+Conditional sections: **readme** | **website**
+
+```{r, label='try-test1', echo=FALSE, eval=TRUE, results='asis'}
+cat(strrep('#', H)) #> H1
+cat(' Top level header: Something something...\n\n')
+
+cat(strrep('#', H+1))
+cat(' Secondery header: Looking good!\n\n')
+
+cat(strrep('#', H+2))
+cat(' Third-level header: Nice...\n\n')
+
+if('readme' %in% WAI){
+cat('
+  *Only README can read me*... \n\n
+  bla bla bla `fun()` bla bla bla
+  ')
+}
+#> Show Code in block:
+cat('\n\n```r\n')
+cat('utils::packageDescription("',PKG,'")$Title \n', sep = "")
+cat('utils::packageDescription(',PKG,')$Description \n', sep = '"')
+cat('```\n\n')
+
+#> Conditional section:
+if('website' %in% WAI){
+  cat('
+  Some more text for the website and...\n
+  ')
+  
+  cat('\n![](https://media.giphy.com/media/2HONNTJbRhzKE/giphy.gif)\n\n')
+}
+
+cat(strrep('#', H+2))
+cat(' Package title \n\n')
+#> Show Code output:
+cat('\n\n', utils::packageDescription(PKG)$Title)
+```
+
+# Pkg info chunk 2
+```{r, label='try-test2', echo=FALSE, eval=TRUE, results='asis'}
+cat(strrep('#', H+2))
+cat(' Package description \n\n')
+cat(utils::packageDescription(PKG)$Description)
+
+cat('\n\n')
+cat(strrep('#', H))
+cat(' Rmd file labels: \n\n')
+cat(knitr::all_labels())
+```

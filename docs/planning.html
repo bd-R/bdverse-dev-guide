@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 7 Project planning and idea farming | bdverse: Development Guide</title>
+  <title>Chapter 6 Project planning and idea farming | bdverse: Development Guide</title>
   <meta name="description" content="… TBA" />
   <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 7 Project planning and idea farming | bdverse: Development Guide" />
+  <meta property="og:title" content="Chapter 6 Project planning and idea farming | bdverse: Development Guide" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://bd-R.github.io/bdverse-dev-guide/" />
   <meta property="og:image" content="https://bd-R.github.io/bdverse-dev-guide/images/under_construction.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="bd-R/bdverse-dev-guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 7 Project planning and idea farming | bdverse: Development Guide" />
+  <meta name="twitter:title" content="Chapter 6 Project planning and idea farming | bdverse: Development Guide" />
   
   <meta name="twitter:description" content="… TBA" />
   <meta name="twitter:image" content="https://bd-R.github.io/bdverse-dev-guide/images/under_construction.png" />
@@ -24,15 +24,15 @@
 <meta name="author" content="The bdverse team" />
 
 
-<meta name="date" content="2019-10-19" />
+<meta name="date" content="2020-07-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/apple-touch-icon.png" />
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="maintenance.html"/>
-<link rel="next" href="help.html"/>
+<link rel="prev" href="QA.html"/>
+<link rel="next" href="guidenews.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -47,19 +47,83 @@
 
 
 
-<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <link href="libs/vis-4.20.1/vis.css" rel="stylesheet" />
 <script src="libs/vis-4.20.1/vis.min.js"></script>
 <script src="libs/visNetwork-binding-2.0.8/visNetwork.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.8/datatables.js"></script>
-<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="libs/datatables-binding-0.9/datatables.js"></script>
+<link href="libs/dt-core-1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.19/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.19/js/jquery.dataTables.min.js"></script>
 <link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -74,54 +138,76 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">bdverse: User Guide</a></li>
+<li><a href="./">bdverse: Development Guide</a></li>
 
 <li class="divider"></li>
-<li><a href="index.html#section"></a></li>
-<li class="chapter" data-level="" data-path="about-this-development-guide.html"><a href="about-this-development-guide.html"><i class="fa fa-check"></i>About this development guide</a></li>
-<li class="chapter" data-level="1" data-path="users.html"><a href="users.html"><i class="fa fa-check"></i><b>1</b> <code>bdverse</code> users</a><ul>
-<li class="chapter" data-level="1.1" data-path="users.html"><a href="users.html#section-1"><i class="fa fa-check"></i><b>1.1</b> </a></li>
+<li><a href="index.html#section"></a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>This work was supported by:</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="architecture.html"><a href="architecture.html"><i class="fa fa-check"></i><b>2</b> Architecture</a><ul>
+<li class="part"><span><b>I The bdverse Packages</b></span></li>
+<li class="chapter" data-level="1" data-path="bdverse.html"><a href="bdverse.html"><i class="fa fa-check"></i><b>1</b> <code>bdverse</code></a></li>
+<li class="chapter" data-level="2" data-path="users.html"><a href="users.html"><i class="fa fa-check"></i><b>2</b> <code>bdverse</code> users</a><ul>
+<li class="chapter" data-level="2.1" data-path="users.html"><a href="users.html#section-1"><i class="fa fa-check"></i><b>2.1</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="architecture.html"><a href="architecture.html"><i class="fa fa-check"></i><b>3</b> Architecture</a><ul>
 <li><a href="architecture.html#overall-bdversarchitecture">Overall <code>bdvers</code>architecture</a></li>
 <li class="chapter" data-level="" data-path="architecture.html"><a href="architecture.html#packages"><i class="fa fa-check"></i>Packages:</a></li>
-<li class="chapter" data-level="2.1" data-path="architecture.html"><a href="architecture.html#bddwc"><i class="fa fa-check"></i><b>2.1</b> <code>bddwc</code></a></li>
-<li class="chapter" data-level="2.2" data-path="architecture.html"><a href="architecture.html#bddwc.app"><i class="fa fa-check"></i><b>2.2</b> <code>bddwc.app</code></a></li>
-<li class="chapter" data-level="2.3" data-path="architecture.html"><a href="architecture.html#bdchecks"><i class="fa fa-check"></i><b>2.3</b> <code>bdchecks</code></a></li>
-<li class="chapter" data-level="2.4" data-path="architecture.html"><a href="architecture.html#bdchecks.app"><i class="fa fa-check"></i><b>2.4</b> <code>bdchecks.app</code></a></li>
-<li class="chapter" data-level="2.5" data-path="architecture.html"><a href="architecture.html#bdclean"><i class="fa fa-check"></i><b>2.5</b> <code>bdclean</code></a></li>
-<li class="chapter" data-level="2.6" data-path="architecture.html"><a href="architecture.html#bdutilities"><i class="fa fa-check"></i><b>2.6</b> <code>bdutilities</code></a></li>
-<li class="chapter" data-level="2.7" data-path="architecture.html"><a href="architecture.html#bdutilities.app"><i class="fa fa-check"></i><b>2.7</b> <code>bdutilities.app</code></a></li>
+<li class="chapter" data-level="3.1" data-path="architecture.html"><a href="architecture.html#bddwc"><i class="fa fa-check"></i><b>3.1</b> <code>bddwc</code></a></li>
+<li class="chapter" data-level="3.2" data-path="architecture.html"><a href="architecture.html#help-needed"><i class="fa fa-check"></i><b>3.2</b> <code>bddwc.app</code></a></li>
+<li class="chapter" data-level="3.3" data-path="architecture.html"><a href="architecture.html#bdchecks"><i class="fa fa-check"></i><b>3.3</b> <code>bdchecks</code></a></li>
+<li class="chapter" data-level="3.4" data-path="architecture.html"><a href="architecture.html#bdchecks.app"><i class="fa fa-check"></i><b>3.4</b> <code>bdchecks.app</code></a></li>
+<li class="chapter" data-level="3.5" data-path="architecture.html"><a href="architecture.html#bdclean"><i class="fa fa-check"></i><b>3.5</b> <code>bdclean</code></a></li>
+<li class="chapter" data-level="3.6" data-path="architecture.html"><a href="architecture.html#bdutilities"><i class="fa fa-check"></i><b>3.6</b> <code>bdutilities</code></a></li>
+<li class="chapter" data-level="3.7" data-path="architecture.html"><a href="architecture.html#bdutilities.app"><i class="fa fa-check"></i><b>3.7</b> <code>bdutilities.app</code></a></li>
 <li class="chapter" data-level="" data-path="architecture.html"><a href="architecture.html#packages-in-the-making"><i class="fa fa-check"></i>Packages in the making</a><ul>
-<li class="chapter" data-level="2.7.1" data-path="architecture.html"><a href="architecture.html#bdvis"><i class="fa fa-check"></i><b>2.7.1</b> <code>bdvis</code></a></li>
-<li class="chapter" data-level="2.7.2" data-path="architecture.html"><a href="architecture.html#bdtools"><i class="fa fa-check"></i><b>2.7.2</b> <code>bdtools</code></a></li>
+<li class="chapter" data-level="3.7.1" data-path="architecture.html"><a href="architecture.html#bdvis"><i class="fa fa-check"></i><b>3.7.1</b> <code>bdvis</code></a></li>
+<li class="chapter" data-level="3.7.2" data-path="architecture.html"><a href="architecture.html#bdtools"><i class="fa fa-check"></i><b>3.7.2</b> <code>bdtools</code></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="weakness.html"><a href="weakness.html"><i class="fa fa-check"></i><b>3</b> Weaknesses</a><ul>
-<li class="chapter" data-level="3.1" data-path="weakness.html"><a href="weakness.html#section-2"><i class="fa fa-check"></i><b>3.1</b> </a></li>
+<li class="part"><span><b>II DevOps</b></span></li>
+<li class="chapter" data-level="4" data-path="testing.html"><a href="testing.html"><i class="fa fa-check"></i><b>4</b> Automated Tests</a></li>
+<li class="chapter" data-level="5" data-path="QA.html"><a href="QA.html"><i class="fa fa-check"></i><b>5</b> QA framework</a><ul>
+<li class="chapter" data-level="5.1" data-path="QA.html"><a href="QA.html#unit-testing"><i class="fa fa-check"></i><b>5.1</b> Unit testing</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="QA.html"><a href="QA.html#create-a-test"><i class="fa fa-check"></i><b>5.1.1</b> Create a test</a></li>
+<li class="chapter" data-level="5.1.2" data-path="QA.html"><a href="QA.html#expect"><i class="fa fa-check"></i><b>5.1.2</b> Expect</a></li>
+<li class="chapter" data-level="5.1.3" data-path="QA.html"><a href="QA.html#expect-error"><i class="fa fa-check"></i><b>5.1.3</b> Expect error</a></li>
+<li class="chapter" data-level="5.1.4" data-path="QA.html"><a href="QA.html#expect-invisible"><i class="fa fa-check"></i><b>5.1.4</b> Expect invisible</a></li>
+<li class="chapter" data-level="5.1.5" data-path="QA.html"><a href="QA.html#expect-length"><i class="fa fa-check"></i><b>5.1.5</b> Expect length</a></li>
+<li class="chapter" data-level="5.1.6" data-path="QA.html"><a href="QA.html#expect-match"><i class="fa fa-check"></i><b>5.1.6</b> Expect match</a></li>
+<li class="chapter" data-level="5.1.7" data-path="QA.html"><a href="QA.html#expect-message"><i class="fa fa-check"></i><b>5.1.7</b> Expect message</a></li>
+<li class="chapter" data-level="5.1.8" data-path="QA.html"><a href="QA.html#expect-named"><i class="fa fa-check"></i><b>5.1.8</b> Expect named</a></li>
+<li class="chapter" data-level="5.1.9" data-path="QA.html"><a href="QA.html#expect-null"><i class="fa fa-check"></i><b>5.1.9</b> Expect null</a></li>
+<li class="chapter" data-level="5.1.10" data-path="QA.html"><a href="QA.html#expect-output"><i class="fa fa-check"></i><b>5.1.10</b> Expect output</a></li>
+<li class="chapter" data-level="5.1.11" data-path="QA.html"><a href="QA.html#expect-setequal"><i class="fa fa-check"></i><b>5.1.11</b> expect setequal</a></li>
+<li class="chapter" data-level="5.1.12" data-path="QA.html"><a href="QA.html#expect-silent"><i class="fa fa-check"></i><b>5.1.12</b> Expect silent</a></li>
+<li class="chapter" data-level="5.1.13" data-path="QA.html"><a href="QA.html#expect-vector"><i class="fa fa-check"></i><b>5.1.13</b> Expect vector</a></li>
+<li class="chapter" data-level="5.1.14" data-path="QA.html"><a href="QA.html#fail-success"><i class="fa fa-check"></i><b>5.1.14</b> Fail/ Success</a></li>
+<li class="chapter" data-level="5.1.15" data-path="QA.html"><a href="QA.html#fail-reporter"><i class="fa fa-check"></i><b>5.1.15</b> Fail reporter</a></li>
+<li class="chapter" data-level="5.1.16" data-path="QA.html"><a href="QA.html#check-inheritance"><i class="fa fa-check"></i><b>5.1.16</b> Check inheritance</a></li>
+<li class="chapter" data-level="5.1.17" data-path="QA.html"><a href="QA.html#logical-expectations"><i class="fa fa-check"></i><b>5.1.17</b> Logical expectations</a></li>
+<li class="chapter" data-level="5.1.18" data-path="QA.html"><a href="QA.html#skip-a-test"><i class="fa fa-check"></i><b>5.1.18</b> Skip a test</a></li>
+<li class="chapter" data-level="5.1.19" data-path="QA.html"><a href="QA.html#run-all-tests-with-custom-location-of-tests"><i class="fa fa-check"></i><b>5.1.19</b> run all tests with custom location of tests</a></li>
+<li class="chapter" data-level="5.1.20" data-path="QA.html"><a href="QA.html#c-unit-testing"><i class="fa fa-check"></i><b>5.1.20</b> C++ unit testing</a></li>
+<li class="chapter" data-level="5.1.21" data-path="QA.html"><a href="QA.html#regression-test"><i class="fa fa-check"></i><b>5.1.21</b> Regression test</a></li>
+<li class="chapter" data-level="5.1.22" data-path="QA.html"><a href="QA.html#automatic-testing"><i class="fa fa-check"></i><b>5.1.22</b> Automatic testing</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="QA.html"><a href="QA.html"><i class="fa fa-check"></i><b>4</b> QA framework</a><ul>
-<li class="chapter" data-level="4.1" data-path="QA.html"><a href="QA.html#unit-testing"><i class="fa fa-check"></i><b>4.1</b> Unit testing</a></li>
-<li class="chapter" data-level="4.2" data-path="QA.html"><a href="QA.html#shinytest"><i class="fa fa-check"></i><b>4.2</b> shinytest</a></li>
-<li class="chapter" data-level="4.3" data-path="QA.html"><a href="QA.html#defensive-programing"><i class="fa fa-check"></i><b>4.3</b> Defensive programing</a></li>
-<li class="chapter" data-level="4.4" data-path="QA.html"><a href="QA.html#ci"><i class="fa fa-check"></i><b>4.4</b> CI</a></li>
+<li class="chapter" data-level="5.2" data-path="QA.html"><a href="QA.html#shinytest"><i class="fa fa-check"></i><b>5.2</b> shinytest</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="QA.html"><a href="QA.html#install-shinytest"><i class="fa fa-check"></i><b>5.2.1</b> Install shinytest</a></li>
+<li class="chapter" data-level="5.2.2" data-path="QA.html"><a href="QA.html#record-a-test"><i class="fa fa-check"></i><b>5.2.2</b> Record a test</a></li>
+<li class="chapter" data-level="5.2.3" data-path="QA.html"><a href="QA.html#run-the-recorded-test"><i class="fa fa-check"></i><b>5.2.3</b> Run the recorded test</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="dev-env.html"><a href="dev-env.html"><i class="fa fa-check"></i><b>5</b> Development environment</a><ul>
-<li class="chapter" data-level="5.1" data-path="dev-env.html"><a href="dev-env.html#section-3"><i class="fa fa-check"></i><b>5.1</b> </a></li>
+<li class="chapter" data-level="5.3" data-path="QA.html"><a href="QA.html#defensive-programing"><i class="fa fa-check"></i><b>5.3</b> Defensive programing</a></li>
+<li class="chapter" data-level="5.4" data-path="QA.html"><a href="QA.html#ci"><i class="fa fa-check"></i><b>5.4</b> CI</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="QA.html"><a href="QA.html#tic"><i class="fa fa-check"></i><b>5.4.1</b> tic</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="maintenance.html"><a href="maintenance.html"><i class="fa fa-check"></i><b>6</b> Maintenance best practicet</a><ul>
-<li class="chapter" data-level="6.1" data-path="maintenance.html"><a href="maintenance.html#section-4"><i class="fa fa-check"></i><b>6.1</b> </a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="planning.html"><a href="planning.html"><i class="fa fa-check"></i><b>7</b> Project planning and idea farming</a><ul>
-<li class="chapter" data-level="7.1" data-path="planning.html"><a href="planning.html#section-5"><i class="fa fa-check"></i><b>7.1</b> </a></li>
+<li class="chapter" data-level="6" data-path="planning.html"><a href="planning.html"><i class="fa fa-check"></i><b>6</b> Project planning and idea farming</a><ul>
+<li class="chapter" data-level="6.1" data-path="planning.html"><a href="planning.html#section-2"><i class="fa fa-check"></i><b>6.1</b> </a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="help.html"><a href="help.html"><i class="fa fa-check"></i><b>8</b> Asking for help</a><ul>
-<li class="chapter" data-level="8.1" data-path="help.html"><a href="help.html#describing-concrete-problems"><i class="fa fa-check"></i><b>8.1</b> describing concrete problems</a></li>
+<li class="chapter" data-level="7" data-path="guidenews.html"><a href="guidenews.html"><i class="fa fa-check"></i><b>7</b> Guide release notes</a><ul>
+<li class="chapter" data-level="7.1" data-path="guidenews.html"><a href="guidenews.html#section-3"><i class="fa fa-check"></i><b>7.1</b> 0.0.1</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="guidenews.html"><a href="guidenews.html"><i class="fa fa-check"></i><b>9</b> Guide release notes</a><ul>
-<li class="chapter" data-level="9.1" data-path="guidenews.html"><a href="guidenews.html#section-6"><i class="fa fa-check"></i><b>9.1</b> 0.0.1</a></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>10</b> References</a></li>
+<li class="chapter" data-level="8" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
 <li class="divider"></li>
 <li><a href="https://bd-r.github.io/The-bdverse/the-bdverse-team.html" target="_blank"> (c) The bdverse team</a></li>
 
@@ -143,9 +229,9 @@
 
             <section class="normal" id="section-">
 <div id="planning" class="section level1">
-<h1><span class="header-section-number">Chapter 7</span> Project planning and idea farming</h1>
-<div id="section-5" class="section level2">
-<h2><span class="header-section-number">7.1</span> </h2>
+<h1><span class="header-section-number">Chapter 6</span> Project planning and idea farming</h1>
+<div id="section-2" class="section level2">
+<h2><span class="header-section-number">6.1</span> </h2>
 
 </div>
 </div>
@@ -154,8 +240,8 @@
           </div>
         </div>
       </div>
-<a href="maintenance.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="help.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="QA.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="guidenews.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -185,11 +271,11 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/bd-R/bdverse-developing-guide/edit/dev/planning.Rmd",
+"link": "https://github.com/bd-R/bdverse-dev-guide/edit/dev/planning.Rmd",
 "text": "Edit this chapter"
 },
 "history": {
-"link": "https://github.com/bd-R/bdverse-developing-guide/commits/master/planning.Rmd",
+"link": "https://github.com/bd-R/bdverse-dev-guide/commits/master/planning.Rmd",
 "text": "Chapter edit history"
 },
 "download": ["bdverse-dev-guide.pdf"],

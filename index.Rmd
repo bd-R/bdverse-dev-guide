@@ -17,21 +17,50 @@ favicon: "images/favicon.ico"
 always_allow_html: yes
 ---
 
+```{r setup, include=FALSE}
+
+import_example <- function(file, lang = xfun::file_ext(file)) {
+  x = xfun::read_utf8(file.path("inst", file))
+  lang = tolower(lang)
+  if (nchar(lang) > 1) {
+    lang = sub('^r', '', lang)
+    if (lang == 'nw') lang = 'tex'
+  }
+  knitr::asis_output(paste(c(sprintf("````%s", lang), x, "````"), collapse = '\n'))
+}
+```
 
 
 # {-}
 
 <center>
 
-**<span style="color:red"> Under heavy construction, step by step... </span>**
-```{r, echo = FALSE, fig.cap="via GIPHY"}
-knitr::include_graphics("images/giphy.gif")
+`r emo::ji("construction")`**Under Construction**`r emo::ji("construction")`
+
+```{r echo=FALSE, out.width = "40%"}
+knitr::include_graphics("images/under_construction.jpg")
 ```
 
 
-This book is a living document. You can view updates about this user guide in the [release notes](#guidenews).
+
+```{r, echo = FALSE, fig.cap="`bdverse` package architecture"}
+knitr::include_graphics("https://raw.githubusercontent.com/bd-R/bdgraphics/master/arc/bdverse/arc_bdverse_pkgs.svg")
+```
+
+</center>
 
 ***
+
+**This work was supported by**:
+
+![](images/ISF.png "ISF")
+[![](images/GSoC.png "GSoC website")](https://summerofcode.withgoogle.com/ target="_blank")
+
+**<span style="color:red"> [To add: Technion's Blumenstein Fund] </span>**
+
+***
+
+<center>
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png" /></a><br /> This work is licensed under [a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 United States License](http://creativecommons.org/licenses/by-nc-sa/3.0/us/).
 
@@ -39,17 +68,5 @@ This book is a living document. You can view updates about this user guide in th
 ![](images/bookdown_logo.png "bookdown_icon"){width=40px}
 <a href="https://github.com/rstudio/bookdown" target="blank">  Published with bookdown   </a>
 ![](images/bookdown_logo.png "bookdown_icon"){width=40px}
+
 </center>
-
-
-# About this development guide {-}
-
-[TBA]
-
-#### Fundings {-}
-
-![](images/ISF.png "ISF")
-
-[![](images/GSoC.png "GSoC website")](https://summerofcode.withgoogle.com/ target="_blank")
-
-**<span style="color:red"> [To add: Technion's Blumenstein Fund] </span>**

@@ -1,10 +1,27 @@
-Package: placeholder
-Type: Website
-Title: bdverse: User Guide
-Version: 0.0.0.001
+Package: bdverse-dev-guide
+Type: Book
+Title: bdverse: Development Guide
+Version: 0.0.0.03
 Imports:
   htmltools,
   bookdown,
+  pkgattrs,
+  pkgnet,
+  emo,
+  tools,
+  dplyr,
+  visNetwork,
+  magrittr,
+  qdapRegex,
+  snakecase,
+  DT,
+  jsonlite,
+  tibble,
+  githubinstall,
+  bdutilities
 Remotes: 
   rstudio/htmltools,
-  rstudio/bookdown
+  rstudio/bookdown,
+  rich-iannone/pkgattrs
+  tom-gu/githubinstall
+  tom-gu/bdutilities

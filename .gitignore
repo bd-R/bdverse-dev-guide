@@ -13,4 +13,7 @@ _removed
 pdfbook
 bdverse-user-guide.log
 bdverse-dev-guide.rds
+temp.R
+temp_pkgattrs
 docs/
+temp2.R
