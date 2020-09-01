@@ -1,0 +1,37 @@
+Tree:
+
+`r emo::ji("construction")` **Under Construction** `r emo::ji("construction")`
+
+[**Coming Soon!**]
+
+Pkg:
+- ...
+- ...
+  - ...
+  
+  
+  
+DevOps:
+
+- Git & GitHub- 
+
+- Automated Tests
+
+- CI
+- File Sync
+
+- 
+
+- Defensive Programing
+
+- In-house Packages
+  - Development: bddev/bdtests
+  - Monitoring: bdmonitoring
+  - Experimentation: bddummy
+
+- Getting Feedback
+
+- Package submission
+  - Peer-review: rOpenSci
+  - CRAN
+  - Papers

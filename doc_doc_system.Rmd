@@ -1,0 +1,121 @@
+#  (PART) Documentation {-}
+ <!-- PART 3: Documentation -->
+ 
+ 
+# Centralized Documentation Scheme {#doc-system}
+
+`r emo::ji("construction")` **Under Construction** `r emo::ji("construction")`
+
+## The main idea
+
+```{r setup, include=FALSE}
+
+import_example <- function(file, lang = xfun::file_ext(file)) {
+  x = xfun::read_utf8(file.path("inst", file))
+  lang = tolower(lang)
+  if (nchar(lang) > 1) {
+    lang = sub('^r', '', lang)
+    if (lang == 'nw') lang = 'tex'
+  }
+  knitr::asis_output(paste(c(sprintf("````%s", lang), x, "````"), collapse = '\n'))
+}
+```
+
+## The implementation
+
+### Source Rmd files
+
+Pkg Info specifically build for a package, here is a generic example:
+
+```{r echo=FALSE}
+# a single file
+xfun::embed_file('inst/pkg_info.Rmd')
+```
+
+`r import_example('pkg_info.Rmd')`
+
+[Rmd templates](#rmd-templates)
+  
+### Client Rmd files:
+
+- Pkg README.Rmd
+- Pkg Rmd file in the user guide
+- Pkg Rmd file in the dev guide
+- Pkg Rmd file in the website
+
+A README example:
+`r import_example('test-muli-RMD.Rmd')`
+
+## Centralized reposotoiers
+
+### bdtemplates
+
+#### CI templates
+
+#### .gitignore & .Rbuildignore
+
+#### Rmd templates {#rmd-templates}
+- Pkg info
+- Pkg badges
+- Pkg CI table
+
+### Graphics
+
+```{=html}
+<div class="github-card" data-github="bd-r/bdgraphics" data-width="700" data-height="250" data-theme="default"></div>
+<script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+```
+For more details [see bdgraphics (under the Graphics section)](#bdgraphics).
+
+
+
+# User Guide {#user-guide}
+
+
+
+# Website {#website}
+
+
+
+# Pkg README file {#readme}
+
+
+
+# Dev Guide {#dev-guide}
+
+
+# Papers {#papers}
+
+
+
+# Graphics {#graphics}
+
+`r emo::ji("construction")` **Under Construction** `r emo::ji("construction")`
+
+## Package color
+
+```{=html}
+<!-- Coolors Palette Widget -->
+      <script src="https://coolors.co/palette-widget/widget.js"></script>
+      <script data-id="06728234961140218">new CoolorsPaletteWidget("06728234961140218", ["265b6d","785549","4bae4d","37a5dd","ef4538","f7941d","6f3f98","939598"]); </script>
+```
+
+```{r, echo = FALSE, fig.cap="`bdverse` package"}
+knitr::include_graphics("https://raw.githubusercontent.com/bd-R/bdgraphics/master/arc/bdverse/arc_bdverse_pkgs.svg")
+```
+
+### Retrieving pkg color
+
+```{r}
+# Data is stored in `bdutilities::bdverse_core_pkgs$pkg_color`
+knitr::kable(bdutilities::bdverse_core_pkgs)
+```
+
+## bdgraphics {#bdgraphics}
+
+
+```{=html}
+<div class="github-card" data-github="bd-r/bdgraphics" data-width="700" data-height="250" data-theme="default"></div>
+<script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+```
+<!-- [![bdgraphics](https://github-readme-stats.vercel.app/api/pin/?username=bd-R&repo=bdgraphics&show_owner=true)](https://github.com/bd-R/bdgraphics) -->

@@ -1,0 +1,24 @@
+# In-house Packages
+
+`r emo::ji("construction")` **Under Construction** `r emo::ji("construction")`
+
+## Development: bddev/bdtests
+
+GitHub repo: https://github.com/bd-R/bdmonitor
+
+## Monitoring: bdmonitor
+
+GitHub repo: https://github.com/bd-R/bdmonitor
+
+### The bdmonitor dashboard
+
+[Better to use the dashboard in full screen](https://bd-r.github.io/bdmonitor/bdmonitor_dashboard.html)
+
+```{r coolors-co, eval = T, echo=F}
+knitr::include_url("https://bd-r.github.io/bdmonitor/bdmonitor_dashboard.html#mas-mas",
+                   height = "600px")
+```
+
+## Experimentation: bddummy
+
+https://github.com/sunn-e/bddummy

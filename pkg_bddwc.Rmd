@@ -1,0 +1,88 @@
+# `bddwc` {#bddwc}
+
+`r emo::ji("construction")` **Under Construction** `r emo::ji("construction")`
+
+## Pkg Info:
+
+Title:
+
+`r packageDescription("bdDwC")$Title`
+
+Description:
+
+`r packageDescription("bdDwC")$Description`
+
+  
+## Pkg Architecture
+
+### Overview
+
+```{r, echo = FALSE, fig.cap="bddwc overview"}
+knitr::include_graphics("https://raw.githubusercontent.com/bd-R/bdgraphics/master/arc/bddwc/arc_bddwc.svg")
+```
+
+### R functions dependency & information 
+
+```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE}
+source('inst/net_code_tables.R')
+fun_tbl <- code_net(repo = 'bd-R/bdDwC', direction = "RL")
+fun_tbl[[1]]
+fun_tbl[[2]]
+```
+
+### Dependencies
+
+<!-- # ```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE} -->
+<!-- # library(pkgnet) -->
+<!-- #  -->
+<!-- # pkgnet:::silence_logger() -->
+<!-- #  -->
+<!-- # reporters <- list(DependencyReporter$new()) -->
+<!-- #  -->
+<!-- # reporters <- lapply( -->
+<!-- #           X = reporters -->
+<!-- #           , FUN = function(reporter){ -->
+<!-- #               reporter$set_package(pkg_name = "bdDwC") -->
+<!-- #               return(reporter$nodes) -->
+<!-- #           } -->
+<!-- #       ) -->
+<!-- #  -->
+<!-- # DT::datatable(data = reporters$nodes, -->
+<!-- #               escape = FALSE, -->
+<!-- #               options = list("pageLength" = 30, -->
+<!-- #                              order = list(list(4, 'desc')))) -->
+<!-- #  -->
+<!-- # ``` -->
+
+
+### Testing
+
+
+
+
+# `bddwc.app` {#bddwc.app}
+
+`r emo::ji("construction")` **Under Construction** `r emo::ji("construction")`
+
+
+# `bdchecks` {#bdchecks}
+`r emo::ji("construction")` **Under Construction** `r emo::ji("construction")`
+
+
+
+# `bdchecks.app` {#bdchecks.app}
+`r emo::ji("construction")` **Under Construction** `r emo::ji("construction")`
+
+
+# `bdclean` {#bdclean.app}
+`r emo::ji("construction")` **Under Construction** `r emo::ji("construction")`
+
+
+# Pkgs Under Construction
+
+## bdvis
+
+## bddashboard
+https://github.com/rahulchauhan049/dashboard.experiment
+
+## bdtools

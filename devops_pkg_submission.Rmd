@@ -1,0 +1,11 @@
+# Package submission {#pkg-submission}
+`r emo::ji("construction")` **Under Construction** `r emo::ji("construction")`
+
+
+## Peer-review: rOpenSci {#ropensci}
+
+
+## CRAN {#cran}
+
+
+## Papers

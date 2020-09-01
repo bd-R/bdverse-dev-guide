@@ -1,0 +1,59 @@
+#  (PART) The `bdverse` Packages {-}
+ <!-- PART 1: bdverse Packages -->
+ 
+# `bdverse` {#bdverse}
+
+`r emo::ji("construction")` **Under Construction** `r emo::ji("construction")`
+
+## Pkg Info:
+
+Title:
+
+`r packageDescription("bdverse")$Title`
+
+Description:
+
+`r packageDescription("bdverse")$Description`
+
+
+## Arcitecture
+
+### R functions dependency & information 
+
+```{r, label='code-network', echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
+source('inst/net_code_tables.R')
+fun_tbl <- code_net(repo = 'bd-R/bdverse')
+fun_tbl[[1]]
+fun_tbl[[2]]
+```
+
+### Dependencies
+
+<!-- # ```{r echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE} -->
+<!-- # library(pkgnet) -->
+<!-- # library(magrittr) -->
+<!-- # knitr::opts_chunk$set( -->
+<!-- #     echo = FALSE -->
+<!-- #     , warning=FALSE -->
+<!-- #     , out.width='100%' -->
+<!-- # ) -->
+<!-- # pkgnet:::silence_logger() -->
+<!-- #  -->
+<!-- # reporters <- list(DependencyReporter$new()) -->
+<!-- #  -->
+<!-- # reporters <- lapply( -->
+<!-- #           X = reporters -->
+<!-- #           , FUN = function(reporter){ -->
+<!-- #               reporter$set_package(pkg_name = "bdverse") -->
+<!-- #               return(reporter$nodes) -->
+<!-- #           } -->
+<!-- #       ) -->
+<!-- #  -->
+<!-- # reporters$nodes -->
+<!-- # reporters$nodes %>% DT::datatable(escape = FALSE,  -->
+<!-- #                                  options = list("pageLength" = 30, -->
+<!-- #                                                 order = list(list(4, 'desc')))) -->
+<!-- #  -->
+<!-- # ``` -->
+
+### Testing

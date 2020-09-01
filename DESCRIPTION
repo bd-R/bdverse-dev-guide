@@ -1,10 +1,12 @@
-Package: placeholder
+Package: bdverse-dev-guide
 Type: Website
-Title: bdverse: User Guide
-Version: 0.0.0.001
+Title: bdverse: Development Guide
+Version: 0.0.0.002
 Imports:
   htmltools,
   bookdown,
+  pkgattrs
 Remotes: 
   rstudio/htmltools,
-  rstudio/bookdown
+  rstudio/bookdown,
+  rich-iannone/pkgattrs

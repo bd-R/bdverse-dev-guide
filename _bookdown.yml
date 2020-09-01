@@ -1,11 +1,14 @@
 book_filename: "bdverse-dev-guide"
-chapter_name: "Chapter "
+chapter_name: ""
 repo: https://github.com/bd-R/bdverse-dev-guide
 output_dir: docs
-rmd_files: ["index.Rmd", "users.Rmd", "architecture.Rmd",
-            "weaknesses.Rmd", "QA.Rmd", "dev_env.Rmd",
-            "maintenance.Rmd", "planning.Rmd", "help.Rmd",
-            "news.Rmd"]
+rmd_files: ["index.Rmd",
+            "pkg_bdverse.Rmd","pkg_bddwc.Rmd",
+            "devops_git.Rmd","devops_testing.Rmd","devops_ci.Rmd","devops_defensive_prog.Rmd",
+            "devops_inhouse_pkgs.Rmd","devops_pkg_submission.Rmd","devops_feedback.Rmd",
+            "doc_doc_system.Rmd",
+            "gsoc_about.Rmd",
+            "appendix.Rmd"]
 clean: [packages.bib, bookdown.bbl]
 new_session: yes
-
+delete_merged_file: TRUE

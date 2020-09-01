@@ -1,0 +1,38 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# Pkg Name
+
+<!-- Reading pkg_info.Rmd + setup WAI -->
+```{r setup-pkg-info, eval = T, echo=F, include = FALSE}
+knitr::knit_child('pkg_info.Rmd')
+PKG = 'bdchecks' # Package name
+WAI = 'readme' # Setup 'Where Am I?' (for conditioning part of a code chunk)
+# 'readme', 'website', 'user_guide', 'dev_guide'
+```
+
+## Chunk 1
+```{r eval = T, include = FALSE}
+H = 3 # Setup top header level within the following code chunk
+```
+```{r ref.label='try-test1', echo = F, eval = T, results='asis'}
+```
+
+## Chunk 2
+```{r eval = T, include = FALSE}
+H = 4 # Setup top header level within the following code chunk
+```
+```{r ref.label='try-test2', echo = F, eval = T, results='asis'}
+```
